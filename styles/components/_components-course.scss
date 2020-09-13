@@ -1,0 +1,38 @@
+.course {
+    max-width: 400px;
+    box-shadow: $secondary-shadow;
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: $primary-bg-color;
+    transition: transform 0.2s ease-out;
+
+    display: grid;
+    grid-template-rows: 250px 180px min-content;
+    border-radius: $primary-rad;
+
+
+    &:hover {
+        transform-origin: center;
+        transform: scale(1.01);
+    }
+
+    &__header {
+        background-color: #fff;
+        overflow: hidden;
+        
+        &-title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &__info {
+        padding: 10px 30px;
+    }
+
+
+    &__footer {
+        padding: 0 30px;
+    }
+}
+

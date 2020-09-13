@@ -1,0 +1,29 @@
+.site-nav {
+    &__list {
+        height: 100%;
+    }
+
+    &__list-item {
+        height: 100%;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__list-link {
+        height: 100%;
+        padding: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $specific-text-color;
+        transition: color 0.23s ease-out ;
+        
+        &:hover {
+            text-decoration: none;
+            color: $primary-color;
+        }
+    }
+    
+}

@@ -1,0 +1,66 @@
+.main {
+
+    &__courses {
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 400px 400px 400px;
+            grid-row-gap: 20px;
+            justify-content: space-between;
+        }
+
+        &-title {
+            grid-column: 1 / 4;
+            justify-self: center;
+        }
+    }
+
+    &__certifications {
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 400px 400px 400px;
+            grid-row-gap: 20px;
+            justify-content: space-between;
+        }
+        
+        &-title {
+            grid-column: 1 / 4;
+            justify-self: center;
+        }
+        
+        &-img {
+            box-shadow: $secondary-shadow;
+        }
+    }
+
+    &__contact {
+        
+        .content-container {
+        }
+        
+        &-title {
+            grid-column: 1 / 4;
+            justify-self: center;
+        }
+        
+        &-list-item {
+            padding: 10px;
+
+        }
+        
+        &-list-link {
+            color: $text-color;
+            font-size: 20px;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            i {
+                font-size: 30px;
+            }
+            
+        }
+    }
+}
