@@ -4,7 +4,7 @@
     overflow: hidden;
     padding: 20px 0;
     background-color: $primary-bg-color;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.2s, box-shadow 0.2s ease-out;
 
     display: grid;
     grid-template-rows: 250px 180px min-content;
@@ -14,6 +14,7 @@
     &:hover {
         transform-origin: center;
         transform: scale(1.01);
+        box-shadow: $hover-shadow;
     }
 
     &__header {

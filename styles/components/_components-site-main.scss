@@ -31,36 +31,14 @@
         
         &-img {
             box-shadow: $secondary-shadow;
-        }
-    }
-
-    &__contact {
-        
-        .content-container {
-        }
-        
-        &-title {
-            grid-column: 1 / 4;
-            justify-self: center;
-        }
-        
-        &-list-item {
-            padding: 10px;
-
-        }
-        
-        &-list-link {
-            color: $text-color;
-            font-size: 20px;
+            transition: transform  0.2s, box-shadow 0.2s ease-out;
 
             &:hover {
-                text-decoration: none;
+                cursor: pointer;
+                transform-origin: center;
+                transform: scale(1.01);
+                box-shadow: $hover-shadow;
             }
-
-            i {
-                font-size: 30px;
-            }
-            
         }
     }
 }

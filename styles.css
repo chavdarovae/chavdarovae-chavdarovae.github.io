@@ -551,31 +551,20 @@ a:hover {
 .main__certifications-img {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform  0.2s, -webkit-box-shadow 0.2s ease-out;
+  transition: -webkit-transform  0.2s, -webkit-box-shadow 0.2s ease-out;
+  transition: transform  0.2s, box-shadow 0.2s ease-out;
+  transition: transform  0.2s, box-shadow 0.2s ease-out, -webkit-transform  0.2s, -webkit-box-shadow 0.2s ease-out;
 }
 
-.main__contact-title {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / 4;
-  -ms-grid-column-align: center;
-      justify-self: center;
-}
-
-.main__contact-list-item {
-  padding: 10px;
-}
-
-.main__contact-list-link {
-  color: #585858;
-  font-size: 20px;
-}
-
-.main__contact-list-link:hover {
-  text-decoration: none;
-}
-
-.main__contact-list-link i {
-  font-size: 30px;
+.main__certifications-img:hover {
+  cursor: pointer;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 .site-nav__list {
@@ -619,10 +608,10 @@ a:hover {
   overflow: hidden;
   padding: 20px 0;
   background-color: #E6E6E6;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s ease-out, -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 250px 180px min-content;
@@ -636,6 +625,8 @@ a:hover {
           transform-origin: center;
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
+  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 .course__header {
