@@ -2,6 +2,14 @@
     max-width: 1290px;
     width: 100%;
     margin: 0 auto;
+
+    @include for-tablet-landscape-up {
+        max-width: 1000px;
+    }
+
+    @include for-desktop-up {
+        max-width: 1290px;
+    }
 }
 
 .row {
