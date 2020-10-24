@@ -26,7 +26,6 @@
                 <ul class="site-nav__list row row--left-aligned">
                     <li class="site-nav__list-item"><a href="#" class="site-nav__list-link">About me</a></li>
                     <li class="site-nav__list-item"><a href="#" class="site-nav__list-link">Courses</a></li>
-                    <li class="site-nav__list-item"><a href="#" class="site-nav__list-link">Certifications</a></li>
                     <li class="site-nav__list-item"><a href="#" class="site-nav__list-link">Work experience</a></li>
                     <li class="site-nav__list-item"><a href="#" class="site-nav__list-link">Personal projects</a></li>
                 </ul>
@@ -40,25 +39,110 @@
     <main class="main">
         <section class="main__about" id="about">
             <div class="content-container">
-                <h2>About me</h2>
-                <address>
+                <h2 class="main__title">About me</h2>
+                <div class="main__highlights">
+                    With 8 years of practice in engineering design, project management and site management I am
+                    confident in approaching and solving complex engineering challenges. My newfound passion for
+                    software development has led me to look for a team to expand my skillset and become a full proof
+                    frontend developer.
+                </div>
+                <div class="main__about-journey">
+                    <h3>On a journey to new frontiers</h3>
+                    <p>
+                        Throughout my 8-year carrier as a civil engineer I was always fascinated by the impact of
+                        digitalization and how web applications changed the core activities within my field and
+                        everything
+                        around it.
+                    </p>
+
+                    <p>
+                        Looking to optimize processes and increase the effectiveness of my team’s efforts, I searched
+                        for ways to extract the maximum of every application by exploring different scripts and APIs.
+                    </p>
+
+                    <p>
+                        As time progressed and my curiosity increased, so did my desire to create applications of my own
+                        and cover areas of my field and everyday life which I felt could be improved with digital solutions.
+                    </p>
+
+                    <p>
+                        In the past 2 years I have decided to pursue this desire fully by completing a developer program
+                        in a software academy and creating my first web application from the ground up.
+                    </p>
+
+                    <p>
+                        Eager to continue this exciting journey and grow my skillset professionally, I am now looking
+                        for an environment of likeminded developers who share my passion of exploring, learning and creating
+                        applications that improve our quality of life.
+                    </p>
+
+                </div>
+                <address class="main__about-address">
                     <a href="#"><i class="fas fa-map-marker-alt"></i> Hamburg, Germany</a><br>
-                    <a href="mailto:chavdarova.e@gmail.com"><i class="fas fa-envelope"></i> chavdarova.e@gmail.com</a><br>
-                    <a href="tel:004915204914944"><i class="fas fa-phone-square"></i> +49 152 049 149 44</a><br>
-                    <a href="https://www.linkedin.com/in/emiliya-chavdarova-81939389"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/emiliya-chavdarova-81939389/</a><br>
-                    <a href="https://github.com/chavdarovae"><i class="fab fa-github-square"></i> https://github.com/chavdarovae</a><br>
+                    <a href="mailto:chavdarova.e@gmail.com"><i class="fas fa-envelope"></i>
+                        chavdarova.e@gmail.com</a><br>
+                    <a href="https://www.linkedin.com/in/emiliya-chavdarova"><i class="fab fa-linkedin"></i>
+                        https://www.linkedin.com/in/emiliya-chavdarova/</a><br>
+                    <a href="https://github.com/chavdarovae"><i class="fab fa-github-square"></i>
+                        https://github.com/chavdarovae</a><br>
                 </address>
- 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque amet sapiente nulla nemo quo nostrum
-                    inventore cum suscipit eveniet error consectetur, repellat dicta. Fugit vero quam iusto asperiores
-                    repellat similique.
-                </p>
+                <div class="main__about-skills">
+                    <div>
+                        <h3>Core skills</h3>
+                        JavaScript & jQuery
+                        AJAX, REST & JSON
+                        Handlebars & Sammy.js
+                        Angular & TypeScript
+                        CSS & SASS
+                        HTML
+                    </div>
+
+                    <div>
+                        <h3>Additional skills</h3>
+                        Analytical problem-solver
+                        Engineering Solutions Design and Implementation
+                        Leadership Experience
+                        Project management
+                    </div>
+
+                    <div>
+                        <h3>Civil engineering skills</h3>
+                        AutoCAD
+                        Autodesk Revit
+                        SAP 2000
+                        Midas Civil
+                        SketchUp & Aztec
+                    </div>
+                    
+                    <div>
+                        <h3>Language skills</h3>
+                        Bulgarian – native
+                        German – professional working
+                        English – full professional
+                        Italian – professional working
+                    </div>
+                </div>
+                <div class="main__about-education">
+                    <div>
+                        <h3>SoftUni Educational Center - Sofia, Bulgaria</h3>
+                        <p>
+                            Software Engineering Program – JavaScript Web Developer
+                        </p>
+                    </div>
+                    <div>
+                        <h3>University of Architecture, Civil Engineering and Geodesy - Sofia, Bulgaria</h3>
+                        <p>
+                            MSc Civil Engineering
+                        </p>
+                    </div>
+
+                </div>
             </div>
         </section>
 
         <section class="main__courses hidden" id="courses">
             <div class="content-container">
-                <h2 class="main__courses-title">Courses</h2>
+                <h2 class="main__title">Courses</h2>
 
                 <article class="course">
                     <div class="course__header">
@@ -68,7 +152,17 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – practical skills for building Single Page Application & basic TypeScript
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – Components, Data binding, Dependency injection, Introduction to RxJS,
+                            Services, Data retrieval from REST, Modules , Routing, Forms, Directives, Pipes,
+                            Interceptors, Observables and Subjects, State management and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-applications.png" alt="JS applications cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
@@ -90,7 +184,17 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – modern front-end design and development with animations and icons for
+                            adaptive display on devices with different screen sizes.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – IT CSS and BEM Architecture, SASS, Transformations and Animations, Grid and
+                            others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-applications.png" alt="JS applications cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
@@ -112,7 +216,17 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – practical skills in web development using HTML5 and CSS3 standard latest
+                            innovations.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – HTML basic and semantic tags, CSS selectors and styles, Presentation rules,
+                            Positioning rules and Layout, Flexbox, Media queries and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-applications.png" alt="JS applications cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
@@ -134,12 +248,53 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – practical skills for building well-structured Single Page Applications.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – REST services, AJAX, Asynchronous programming, Bootstrap, Templating, Routing
+                            and Architecture, Webpack and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-applications.png" alt="JS applications cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
                             <i class="fas fa-rocket"></i>
-                            12 Februar 2019
+                            19 March 2019
+                        </span>
+                        <span>
+                            <i class="fas fa-stopwatch"></i>
+                            4 weeks
+                        </span>
+                    </div>
+                </article>
+
+                <article class="course">
+                    <div class="course__header">
+                        <h3 class="course__header-title">JS Advanced</h3>
+                        <div class="course__header-img">
+                            <img src="./assets/images/noun_developer_2544540.svg" alt="programmer">
+                        </div>
+                    </div>
+                    <div class="course__info">
+                        <div class="course__info-focus">
+                            Course focus – develops algorithmic thinking and practical skills for DOM tree manipulation
+                            and Unit testing.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – IFFE, Closure, Objects and Classes, Unit testing, Object-oriented
+                            programming, Inheritance, Prototypes and Prototype chains and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-advanced.png" alt="JS advanced cerificate">
+                        </div>
+                    </div>
+                    <div class="course__footer row row--space-btw">
+                        <span>
+                            <i class="fas fa-rocket"></i>
+                            12 February 2019
                         </span>
                         <span>
                             <i class="fas fa-stopwatch"></i>
@@ -156,12 +311,22 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – JS syntax and practical skills in manipulation with data types, operators,
+                            expressions, conditional constructions, loops and functions.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – Syntax and operators, Document object model, Functions and Logic flow, Arrays
+                            and Matrices, Strings and Regular Expressions, Objects and JSON, DOM events and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/js-fundamentals.png" alt="JS fundamentals cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
                             <i class="fas fa-rocket"></i>
-                            12 Januar 2019
+                            15 January 2019
                         </span>
                         <span>
                             <i class="fas fa-stopwatch"></i>
@@ -178,7 +343,19 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – basic techniques and tools for practical programming beyond the writing of
+                            simple program constructions.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – Fundamental programming competences, Basic introduction in additional
+                            technologies: Computer science, Database basics, Regular expressions, Basic Web, Git and
+                            GitHub, Basic CRUD, QA fundamentals, HTML&CSS, Bit operations and others.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/technology-fundamentals.png"
+                                alt="JS technology-fundamentals cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
@@ -200,7 +377,16 @@
                         </div>
                     </div>
                     <div class="course__info">
-
+                        <div class="course__info-focus">
+                            Course focus – Basic coding skills.
+                        </div>
+                        <div class="course__info-scope">
+                            Course scope – IDE, Simple operations and calculations, Conditional statements, Loops and
+                            Nested loops.
+                        </div>
+                        <div class="course__info-certificate-img">
+                            <img src="./assets/images/csharp-basics.png" alt="JS csharp-basics cerificate">
+                        </div>
                     </div>
                     <div class="course__footer row row--space-btw">
                         <span>
@@ -213,40 +399,47 @@
                         </span>
                     </div>
                 </article>
-    
+
             </div>
         </section>
 
-        <section class="main__certifications hidden" id="certifications">
+        <section class="main__work-experience hidden" id="work">
             <div class="content-container">
-                <h2 class="main__certifications-title">Certifications and awards</h2>
-                <div class="main__certifications-img">
-                    <img src="./assets/images/js-applications.png" alt="JS applications cerificate">
-                </div>
-                <div class="main__certifications-img">
-                    <img src="./assets/images/js-advanced.png" alt="JS advanced cerificate">
-                </div>
-                <div class="main__certifications-img">
-                    <img src="./assets/images/js-fundamentals.png" alt="JS fundamentals cerificate">
-                </div>
-                <div class="main__certifications-img">
-                    <img src="./assets/images/technology-fundamentals.png" alt="Technology fundamentals cerificate">
-                </div>
-                <div class="main__certifications-img">
-                    <img src="./assets/images/csharp-basics.png" alt="C# cerificate">
-                </div>
+                <h2 class="main__title">Work experience</h2>
             </div>
         </section>
 
-        <section class="main__work-experience hidden" id="work-experience">
+        <section class="main__personal-projects hidden" id="personal">
             <div class="content-container">
-                <h2>Work experience</h2>
-            </div>
-        </section>
+                <h2 class="main__title">Personal projects</h2>
+                <div>
+                    <p class="main__highlights">
+                        Designed, developed and deployed an MVP Performance Management Tool (PMT SPA). The web
+                        application is inspired by Six Sigma performance improvement techniques. It provides a platform
+                        for multiple
+                        parties to quickly exchange highly complex technical reviews of assets or performance
+                        indicators,
+                        while generating a high-level overview for C level stakeholders.
+                    </p>
+                    <p>
+                        Wrote a well-structured Single Page Application with a cloud-based Backend (BaaS) using
+                        JavaScript, AJAX, REST and JSON. Implemented efficient routing and templating via Handlebars and
+                        Sammy.js.
 
-        <section class="main__personal-projects hidden" id="personal-projects">
-            <div class="content-container">
-                <h2>Personal projects</h2>
+                    </p>
+                    <p>
+                        Partnered with project managers and analysts to deeply understand the necessities of users and
+                        build
+                        a custom UI that explicitly serves those needs.
+                    </p>
+                    <p>
+                        Enabled modern multi-platform application design following the latest standards of HTML5 and
+                        CSS3.
+                        Structured the SCSS code in a least wasteful way by implementing Inverted Triangle architecture
+                        and
+                        BEM methodology.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
