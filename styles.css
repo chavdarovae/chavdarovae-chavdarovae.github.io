@@ -519,13 +519,15 @@ a:hover {
 .site-header .content-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 1fr 50px;
-      grid-template-columns: 50px 1fr 50px;
+  -ms-grid-columns: 50px 1fr;
+      grid-template-columns: 50px 1fr;
   grid-column-gap: 5px;
 }
 
 @media (min-width: 900px) {
   .site-header .content-container {
+    -ms-grid-columns: 50px 1fr 50px;
+        grid-template-columns: 50px 1fr 50px;
     grid-column-gap: 30px;
   }
 }
@@ -533,6 +535,16 @@ a:hover {
 .site-header-logo {
   width: 50px;
   padding: 10px 0;
+}
+
+.site-header-logo--frontend {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .site-header-logo--frontend {
+    display: block;
+  }
 }
 
 .main {
@@ -652,8 +664,8 @@ a:hover {
 }
 
 .main__courses .content-container {
-  -ms-grid-columns: 400px;
-      grid-template-columns: 400px;
+  -ms-grid-columns: 300px;
+      grid-template-columns: 300px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

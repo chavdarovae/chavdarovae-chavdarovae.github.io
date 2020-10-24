@@ -8,6 +8,7 @@
         @include for-tablet-landscape-up {
             grid-column: 1 / -1;
         }
+
     }
 
     &__highlights {
@@ -32,7 +33,7 @@
                 "address";
 
             @include for-tablet-landscape-up {
-                grid-template-columns: 1fr 400px;
+                grid-template-columns: 1fr 500px;
                 grid-template-rows: min-content min-content min-content min-content;
                 justify-content: space-between;
 
