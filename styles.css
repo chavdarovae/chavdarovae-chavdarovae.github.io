@@ -569,8 +569,8 @@ a:hover {
 
 @media (min-width: 900px) {
   .main__about .content-container {
-    -ms-grid-columns: 1fr 500px;
-        grid-template-columns: 1fr 500px;
+    -ms-grid-columns: 1fr 400px;
+        grid-template-columns: 1fr 400px;
     -ms-grid-rows: min-content min-content min-content min-content;
         grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
         grid-template-rows: min-content min-content min-content min-content;
