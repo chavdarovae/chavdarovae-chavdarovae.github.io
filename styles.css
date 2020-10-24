@@ -509,6 +509,7 @@ a:hover {
 }
 
 .site-header {
+  height: 70px;
   background: #fff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -520,11 +521,13 @@ a:hover {
   display: grid;
   -ms-grid-columns: 50px 1fr 50px;
       grid-template-columns: 50px 1fr 50px;
-  grid-column-gap: 30px;
+  grid-column-gap: 5px;
 }
 
-.site-header .site-nav {
-  height: 100%;
+@media (min-width: 900px) {
+  .site-header .content-container {
+    grid-column-gap: 30px;
+  }
 }
 
 .site-header-logo {
@@ -674,6 +677,10 @@ a:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+}
+
+.site-nav {
+  height: 70px;
 }
 
 .site-nav__list {

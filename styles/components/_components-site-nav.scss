@@ -1,4 +1,6 @@
 .site-nav {
+    height: 70px;
+
     &__list {
         height: 100%;
     }
@@ -17,13 +19,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // color: $specific-text-color;
-        transition: color 0.23s ease-out ;
-        
+        transition: color 0.23s ease-out;
+
         &:hover {
             text-decoration: none;
             color: $primary-color;
         }
     }
-    
 }
