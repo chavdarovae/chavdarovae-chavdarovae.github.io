@@ -15,7 +15,7 @@ class HomePageRouter {
     handleNavBtnClick() {
         const { navBtn, main } = selectors;
         $(navBtn).on('click', (e) => {
-            const mainComponentId = '#' + e.target.text.split(' ')[0].toLowerCase();
+            const mainComponentId = '#' + e.target.text.toLowerCase();
             $(main).children().filter(':visible').addClass('hidden');
             $(mainComponentId).removeClass('hidden');
         })
