@@ -1,11 +1,13 @@
 a {
     font-family: 'Montserrat';
     font-size: 14px;
-    color: #3E9DE1;
+    font-style: normal;
+    color: $text-color;
     text-decoration: none;
 }
 
 a:hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+    color: $primary-color;
 }

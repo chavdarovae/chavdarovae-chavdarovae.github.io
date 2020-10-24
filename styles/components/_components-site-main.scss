@@ -1,36 +1,71 @@
 .main {
+    padding: 20px 0 20px 0;
+    color: $text-color;
+
+    &__title {
+        justify-self: center;
+        grid-column: 1 / -1;
+    }
+
+    &__highlights {
+        justify-self: center;
+        background-color: #f9f0a3;
+        padding: 20px 10px;
+        box-shadow: $secondary-shadow;
+    }
 
     &__about {
         .content-container {
             grid-template-columns: 500px;
             justify-content: center;
-            
 
             @include for-tablet-landscape-up {
-                grid-template-columns: 1fr 400px;
+                grid-template-columns: 1fr 500px;
                 justify-content: space-between;
             }
 
             @include for-desktop-up {
-                grid-template-columns:  1fr 400px;
-                justify-content: space-between;
             }
         }
 
+        &-education,
+        &-journey,
         &-skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            column-gap: 10px;
+            justify-content: flex-start;
+
+            &-img {
+                width: 50px;
+                margin: 20px;
+            }
+
+            &-item {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            @include for-tablet-landscape-up {
+                
+            }
         }
 
+        &-address {
+            justify-content: space-between;
+        }
+
+        &-skills {
+            grid-row: 3 / 5;
+            grid-column: 2 / 3;
+
+            @include for-tablet-landscape-up {
+       
+            }
+        }
     }
-    
+
     &__courses {
         .content-container {
             grid-template-columns: 400px;
             justify-content: center;
-            
 
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
@@ -42,21 +77,8 @@
                 justify-content: space-between;
             }
         }
-
-        
     }
 
-    &__title {
-        justify-self: center;
-        grid-column: 1 / -1;
-    }
 
-    &__highlights {
-        justify-self: center;
-        background-color: #F9F0A3;
-        padding: 10px;
-        box-shadow: $secondary-shadow;
-        grid-column: 1 / -1;
-    }
-
+   
 }
