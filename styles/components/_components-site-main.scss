@@ -1,10 +1,14 @@
 .main {
-    padding: 20px 0 20px 0;
+    padding: 20px;
     color: $text-color;
 
     &__title {
         justify-self: center;
-        grid-column: 1 / -1;
+
+        @include for-tablet-landscape-up {
+            grid-column: 1 / -1;
+        }
+        
     }
 
     &__highlights {
@@ -16,23 +20,50 @@
 
     &__about {
         .content-container {
-            grid-template-columns: 500px;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content min-content min-content min-content min-content min-content;
             justify-content: center;
+
+            grid-template-areas:
+                "title"
+                "highlights"
+                "journey"
+                "skills"
+                "education"
+                "address";
 
             @include for-tablet-landscape-up {
                 grid-template-columns: 1fr 500px;
+                grid-template-rows: min-content min-content min-content min-content;
                 justify-content: space-between;
+
+                grid-template-areas:
+                    "title title"
+                    "highlights address"
+                    "journey skills"
+                    "education skills";
             }
 
             @include for-desktop-up {
             }
         }
 
+        &-title {
+            grid-area: title;
+            justify-self: center;
+        }
+
+        &-highlights {
+            grid-area: highlights;
+            justify-self: center;
+            background-color: #f9f0a3;
+            padding: 20px 10px;
+            box-shadow: $secondary-shadow;
+        }
+
         &-education,
         &-journey,
         &-skills {
-            justify-content: flex-start;
-
             &-img {
                 width: 50px;
                 margin: 20px;
@@ -44,20 +75,29 @@
             }
 
             @include for-tablet-landscape-up {
-                
+                justify-content: flex-start;
             }
         }
 
+        &-journey {
+            grid-area: journey;
+        }
+
+        &-education {
+            grid-area: education;
+        }
+
         &-address {
+            grid-area: address;
             justify-content: space-between;
         }
 
         &-skills {
-            grid-row: 3 / 5;
-            grid-column: 2 / 3;
+            grid-area: skills;
 
             @include for-tablet-landscape-up {
-       
+                // grid-row: 3 / 5;
+                // grid-column: 2 / 3;
             }
         }
     }
@@ -78,7 +118,4 @@
             }
         }
     }
-
-
-   
 }

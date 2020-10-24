@@ -531,14 +531,19 @@ a:hover {
 }
 
 .main {
-  padding: 20px 0 20px 0;
+  padding: 20px;
   color: #585858;
 }
 
 .main__title {
   -ms-grid-column-align: center;
       justify-self: center;
-  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .main__title {
+    grid-column: 1 / -1;
+  }
 }
 
 .main__highlights {
@@ -551,27 +556,49 @@ a:hover {
 }
 
 .main__about .content-container {
-  -ms-grid-columns: 500px;
-      grid-template-columns: 500px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: min-content min-content min-content min-content min-content min-content;
+      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
+      grid-template-rows: min-content min-content min-content min-content min-content min-content;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+      grid-template-areas: "title" "highlights" "journey" "skills" "education" "address";
 }
 
 @media (min-width: 900px) {
   .main__about .content-container {
     -ms-grid-columns: 1fr 500px;
         grid-template-columns: 1fr 500px;
+    -ms-grid-rows: min-content min-content min-content min-content;
+        grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
+        grid-template-rows: min-content min-content min-content min-content;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+        grid-template-areas: "title title" "highlights address" "journey skills" "education skills";
   }
 }
 
-.main__about-education, .main__about-journey, .main__about-skills {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+.main__about-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.main__about-highlights {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: highlights;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #f9f0a3;
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .main__about-education-img, .main__about-journey-img, .main__about-skills-img {
@@ -584,19 +611,39 @@ a:hover {
   margin-bottom: 10px;
 }
 
+@media (min-width: 900px) {
+  .main__about-education, .main__about-journey, .main__about-skills {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.main__about-journey {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: journey;
+}
+
+.main__about-education {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: education;
+}
+
 .main__about-address {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: address;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .main__about-skills {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
-  grid-row: 3 / 5;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: skills;
 }
 
 .main__courses .content-container {
