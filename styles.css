@@ -774,7 +774,29 @@ a:hover {
 }
 
 .course__info {
-  padding: 10px 30px;
+  padding: 20px 30px;
+}
+
+.course__info-focus span {
+  font-size: 18px;
+  font-size: 900;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+.course__info-scope--first {
+  font-size: 18px;
+  font-size: 900;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+.course__info-scope li {
+  font-family: 'Lato';
+}
+
+.course__info-link {
+  margin: 20px 0;
 }
 
 .course__footer {
@@ -788,7 +810,7 @@ a:hover {
 }
 
 .course--current .course__info-scope,
-.course--current .course__info-certificate-img {
+.course--current .course__info-link {
   display: block;
 }
 

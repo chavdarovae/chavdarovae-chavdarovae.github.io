@@ -28,7 +28,35 @@
     }
 
     &__info {
-        padding: 10px 30px;
+        padding: 20px 30px;
+
+        &-focus {
+            span {
+                font-size: 18px;
+                font-size: 900;
+                margin-bottom: 5px;
+                text-decoration: underline;
+            }
+        }
+
+        &-scope {
+            
+            &--first {
+                font-size: 18px;
+                font-size: 900;
+                margin-bottom: 5px;
+                text-decoration: underline;
+
+            }
+            
+            li{
+                font-family: 'Lato';
+            }
+        }
+
+        &-link {
+            margin: 20px 0;
+        }
     }
 
     &__footer {
@@ -39,7 +67,7 @@
         grid-template-rows: 250px min-content min-content;
 
         .course__info-scope,
-        .course__info-certificate-img {
+        .course__info-link {
             display: block;
         }
     }
