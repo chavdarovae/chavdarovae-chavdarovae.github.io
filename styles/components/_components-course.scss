@@ -1,5 +1,7 @@
 .course {
     max-width: 400px;
+    width: 350px;
+    min-width: 300px;
     padding: 20px 0;
     box-shadow: $secondary-shadow;
     border-radius: $primary-rad;
@@ -30,25 +32,9 @@
         padding: 20px 30px;
 
         &-focus {
-            span {
-                font-size: 18px;
-                font-size: 900;
-                margin-bottom: 5px;
-                text-decoration: underline;
-            }
         }
 
         &-scope {
-            &--first {
-                font-size: 18px;
-                font-size: 900;
-                margin-bottom: 5px;
-                text-decoration: underline;
-            }
-
-            li {
-                font-family: "Lato";
-            }
         }
 
         &-link {

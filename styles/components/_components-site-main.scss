@@ -2,7 +2,8 @@
     padding: 20px;
     color: $text-color;
 
-    &__title {
+    &__title,
+    &__info {
         justify-self: center;
 
         @include for-tablet-landscape-up {
@@ -12,7 +13,6 @@
 
     &__about {
         .content-container {
-            grid-template-columns: 1fr;
             grid-template-rows: min-content min-content min-content min-content min-content min-content;
             justify-content: center;
 
@@ -75,8 +75,8 @@
             grid-area: education;
 
             .certificate-list {
-                font-family: 'Lato';
-                
+                font-family: "Lato";
+
                 li {
                     font-size: 12px;
                     padding: 5px 10px;
@@ -94,11 +94,10 @@
                     display: inline;
                     font-size: 10px;
                     position: absolute;
-                    top: 0; right: -10px;
+                    top: 0;
+                    right: -10px;
                 }
             }
-           
-
 
             #certificateToggle {
                 display: none;
@@ -106,11 +105,11 @@
                 position: absolute;
             }
 
-            #certificateToggle + .certificate-list {
+            #certificateToggle + .text-like-list {
                 display: none;
             }
 
-            #certificateToggle:checked + .certificate-list {
+            #certificateToggle:checked + .text-like-list {
                 display: block;
             }
         }
@@ -141,8 +140,8 @@
 
     &__courses {
         .content-container {
-            grid-template-columns: 300px;
-            justify-content: center;
+            grid-template-columns: 1fr;
+            justify-items: center;
 
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
@@ -157,7 +156,17 @@
         }
     }
 
+    &__experience {
+        .content-container {
+    
+        }
+    }
+
     &__projects {
+        .content-container {
+  
+        }
+
         p {
             margin-bottom: 10px;
         }

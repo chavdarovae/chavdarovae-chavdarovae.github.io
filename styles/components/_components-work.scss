@@ -1,0 +1,48 @@
+.work {
+    border-radius: $primary-rad;
+    box-shadow: $primary-shadow;
+    padding: 30px 10px;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: 350px;
+    grid-template-rows: min-content min-content min-content 200px min-content;
+    grid-template-areas:
+        "period"
+        "position"
+        "employer"
+        "image"
+        "description";
+
+    @include for-tablet-landscape-up {
+        grid-template-columns: 300px 1fr 200px;
+        grid-template-rows: 30px 20px 110px;
+        grid-template-areas:
+            "image position period"
+            "image employer employerF"
+            "image description description";
+    }
+
+    &__img {
+        grid-area: image;
+        overflow: hidden;
+        border-radius: $primary-rad;
+    }
+
+    &__position {
+        grid-area: position;
+    }
+
+    &__employer {
+        grid-area: employer;
+    }
+
+    &__period {
+        grid-area: period;
+    }
+
+    &__description {
+        grid-area: description;
+        overflow: hidden;
+    }
+}
