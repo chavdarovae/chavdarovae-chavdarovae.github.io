@@ -73,6 +73,20 @@
 
         &-education {
             grid-area: education;
+
+            #certificateToggle {
+                display: none;
+                pointer-events: none;
+                position: absolute;
+            }
+
+            #certificateToggle + ul {
+                display: none;
+            }
+
+            #certificateToggle[type="checkbox"]:checked + ul {
+                display: block;
+            }
         }
 
         &-address {
@@ -101,7 +115,7 @@
 
     &__courses {
         .content-container {
-            grid-template-columns: 400px;
+            grid-template-columns: 300px;
             justify-content: center;
 
             @include for-tablet-landscape-up {
@@ -114,6 +128,12 @@
                 grid-template-columns: 400px 400px 400px;
                 justify-content: space-between;
             }
+        }
+    }
+
+    &__projects {
+        p {
+            margin-bottom: 10px;
         }
     }
 }

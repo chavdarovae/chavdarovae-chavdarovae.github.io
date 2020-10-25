@@ -1,6 +1,7 @@
 const selectors = {
     main: '.main',
     navBtn: '.site-nav__list-link',
+    curNavBtn: '.site-nav__list-link--current',
     courseInstance: '.course',
     curCourseInstance: '.course--current',
 }
@@ -16,8 +17,10 @@ class HomePageRouter {
     }
 
     handleNavBtnClick() {
-        const { navBtn, main,curCourseInstance } = selectors;
+        const { navBtn, main, curCourseInstance, curNavBtn } = selectors;
         $(navBtn).on('click', (e) => {
+            $(curNavBtn).removeClass('site-nav__list-link--current');
+            $(e.target).addClass('site-nav__list-link--current');
             const mainComponentId = '#' + e.target.text.toLowerCase();
             if(mainComponentId==='#courses') {
                 $(curCourseInstance).removeClass('course--current');
