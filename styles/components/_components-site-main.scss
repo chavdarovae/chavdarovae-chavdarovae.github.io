@@ -74,17 +74,43 @@
         &-education {
             grid-area: education;
 
+            .certificate-list {
+                font-family: 'Lato';
+                
+                li {
+                    font-size: 12px;
+                    padding: 5px 10px;
+                }
+            }
+
+            //certificate-list toggle logic
+            .certificate-trigger {
+                width: fit-content;
+                cursor: pointer;
+                position: relative;
+
+                &:after {
+                    content: "▼";
+                    display: inline;
+                    font-size: 10px;
+                    position: absolute;
+                    top: 0; right: -10px;
+                }
+            }
+           
+
+
             #certificateToggle {
                 display: none;
                 pointer-events: none;
                 position: absolute;
             }
 
-            #certificateToggle + ul {
+            #certificateToggle + .certificate-list {
                 display: none;
             }
 
-            #certificateToggle[type="checkbox"]:checked + ul {
+            #certificateToggle:checked + .certificate-list {
                 display: block;
             }
         }

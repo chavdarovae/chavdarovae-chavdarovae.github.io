@@ -7,6 +7,10 @@
 
     &__list-item {
         height: 100%;
+        
+        &:last-child {
+            margin-right: 10px;
+        }
     }
 
     &__list-link {
@@ -18,23 +22,26 @@
         transition: color 0.23s ease-out;
         position: relative;
 
+
         &:hover {
             text-decoration: none;
             color: $primary-color;
             background-color: $nav-hover-color;
         }
 
-        &--current {
-            &:before {
-                content: "";
-                display: block;
-                height: 5px;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: $primary-color;
-            }
+        
+    }
+
+    &__list-link--current {
+        &:before {
+            content: "";
+            display: block;
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $primary-color;
         }
     }
 }

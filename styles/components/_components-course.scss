@@ -10,7 +10,6 @@
     display: grid;
     grid-template-rows: 250px 180px min-content;
 
-
     &:hover {
         transform-origin: center;
         transform: scale(1.01);
@@ -20,7 +19,7 @@
     &__header {
         background-color: #fff;
         overflow: hidden;
-        
+
         &-title {
             text-align: center;
             text-transform: uppercase;
@@ -40,22 +39,28 @@
         }
 
         &-scope {
-            
             &--first {
                 font-size: 18px;
                 font-size: 900;
                 margin-bottom: 5px;
                 text-decoration: underline;
-
             }
-            
-            li{
-                font-family: 'Lato';
+
+            li {
+                font-family: "Lato";
             }
         }
 
         &-link {
             margin: 20px 0;
+
+            a {
+                color: $primary-color;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -72,4 +77,3 @@
         }
     }
 }
-
