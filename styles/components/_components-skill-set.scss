@@ -1,4 +1,5 @@
 .skill-set {
+
     &__title {
         width: fit-content;
         color: #fff;
@@ -7,11 +8,20 @@
         border-radius: 100px;
         box-shadow: $secondary-shadow;
         padding: 5px 22px;
-        margin: 10px 0;
+        margin: 10px auto;
         text-transform: uppercase;
+
+        @include for-tablet-landscape-up {
+            margin: 10px 0;
+        }
     }
 
     &__list {
+        text-align: center;
+
+        @include for-tablet-landscape-up {
+            text-align: left;
+        }
     }
 
     &__list-item {

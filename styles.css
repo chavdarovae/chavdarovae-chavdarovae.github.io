@@ -563,15 +563,6 @@ a:hover {
   }
 }
 
-.main__highlights {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  background-color: #f9f0a3;
-  padding: 20px 10px;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-}
-
 .main__about .content-container {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
@@ -586,8 +577,8 @@ a:hover {
 
 @media (min-width: 900px) {
   .main__about .content-container {
-    -ms-grid-columns: 1fr 400px;
-        grid-template-columns: 1fr 400px;
+    -ms-grid-columns: 1fr 500px;
+        grid-template-columns: 1fr 500px;
     -ms-grid-rows: min-content min-content min-content min-content;
         grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
         grid-template-rows: min-content min-content min-content min-content;
@@ -610,12 +601,14 @@ a:hover {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: highlights;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  background-color: #f9f0a3;
-  padding: 20px 10px;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 900px) {
+  .main__about-education, .main__about-journey, .main__about-skills {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .main__about-education-img, .main__about-journey-img, .main__about-skills-img {
@@ -626,14 +619,6 @@ a:hover {
 .main__about-education-item, .main__about-journey-item, .main__about-skills-item {
   width: 100%;
   margin-bottom: 10px;
-}
-
-@media (min-width: 900px) {
-  .main__about-education, .main__about-journey, .main__about-skills {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
 }
 
 .main__about-journey {
@@ -652,9 +637,27 @@ a:hover {
   -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: address;
+  min-height: 135px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+  background-color: #f9f0a3;
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+@media (min-width: 900px) {
+  .main__about-address {
+    min-height: 95px;
+    padding: 0;
+    background-color: #fff;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: none;
+  }
 }
 
 .main__about-skills {
@@ -664,8 +667,8 @@ a:hover {
 }
 
 .main__courses .content-container {
-  -ms-grid-columns: 300px;
-      grid-template-columns: 300px;
+  -ms-grid-columns: 400px;
+      grid-template-columns: 400px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -678,6 +681,9 @@ a:hover {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 }
 
@@ -726,15 +732,17 @@ a:hover {
 .site-nav__list-link:hover {
   text-decoration: none;
   color: #FF3E66;
+  background-color: #F8F8F8;
 }
 
 .course {
   max-width: 400px;
+  padding: 20px 0;
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  padding: 20px 0;
+  border-radius: 4px;
   background-color: #00DAC3;
+  overflow: hidden;
   -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
   transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
   transition: transform 0.2s, box-shadow 0.2s ease-out;
@@ -744,7 +752,6 @@ a:hover {
   -ms-grid-rows: 250px 180px min-content;
       grid-template-rows: 250px 180px -webkit-min-content;
       grid-template-rows: 250px 180px min-content;
-  border-radius: 4px;
 }
 
 .course:hover {
@@ -774,6 +781,17 @@ a:hover {
   padding: 0 30px;
 }
 
+.course--current {
+  -ms-grid-rows: 250px min-content min-content;
+      grid-template-rows: 250px -webkit-min-content -webkit-min-content;
+      grid-template-rows: 250px min-content min-content;
+}
+
+.course--current .course__info-scope,
+.course--current .course__info-certificate-img {
+  display: block;
+}
+
 .skill-set__title {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -785,8 +803,24 @@ a:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   padding: 5px 22px;
-  margin: 10px 0;
+  margin: 10px auto;
   text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .skill-set__title {
+    margin: 10px 0;
+  }
+}
+
+.skill-set__list {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .skill-set__list {
+    text-align: left;
+  }
 }
 
 .skill-set__list-item {
@@ -799,4 +833,14 @@ a:hover {
 
 .hidden {
   display: none;
+}
+
+.highlighted {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #f9f0a3;
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }

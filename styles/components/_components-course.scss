@@ -1,14 +1,14 @@
 .course {
     max-width: 400px;
-    box-shadow: $secondary-shadow;
-    overflow: hidden;
     padding: 20px 0;
+    box-shadow: $secondary-shadow;
+    border-radius: $primary-rad;
     background-color: $course-color;
+    overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s ease-out;
 
     display: grid;
     grid-template-rows: 250px 180px min-content;
-    border-radius: $primary-rad;
 
 
     &:hover {
@@ -31,9 +31,17 @@
         padding: 10px 30px;
     }
 
-
     &__footer {
         padding: 0 30px;
+    }
+
+    &--current {
+        grid-template-rows: 250px min-content min-content;
+
+        .course__info-scope,
+        .course__info-certificate-img {
+            display: block;
+        }
     }
 }
 

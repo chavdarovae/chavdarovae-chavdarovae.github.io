@@ -8,14 +8,6 @@
         @include for-tablet-landscape-up {
             grid-column: 1 / -1;
         }
-
-    }
-
-    &__highlights {
-        justify-self: center;
-        background-color: #f9f0a3;
-        padding: 20px 10px;
-        box-shadow: $secondary-shadow;
     }
 
     &__about {
@@ -55,15 +47,15 @@
 
         &-highlights {
             grid-area: highlights;
-            justify-self: center;
-            background-color: #f9f0a3;
-            padding: 20px 10px;
-            box-shadow: $secondary-shadow;
         }
 
         &-education,
         &-journey,
         &-skills {
+            @include for-tablet-landscape-up {
+                justify-content: flex-start;
+            }
+
             &-img {
                 width: 50px;
                 margin: 20px;
@@ -72,10 +64,6 @@
             &-item {
                 width: 100%;
                 margin-bottom: 10px;
-            }
-
-            @include for-tablet-landscape-up {
-                justify-content: flex-start;
             }
         }
 
@@ -89,16 +77,25 @@
 
         &-address {
             grid-area: address;
+            min-height: 135px;
             justify-content: space-between;
+            width: 100%;
+            background-color: #f9f0a3;
+            padding: 20px 10px;
+            box-shadow: $secondary-shadow;
+            border-radius: $primary-rad;
+
+            @include for-tablet-landscape-up {
+                min-height: 95px;
+                padding: 0;
+                background-color: #fff;
+                box-shadow: none;
+                border-radius: none;
+            }
         }
 
         &-skills {
             grid-area: skills;
-
-            @include for-tablet-landscape-up {
-                // grid-row: 3 / 5;
-                // grid-column: 2 / 3;
-            }
         }
     }
 
@@ -110,6 +107,7 @@
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
                 justify-content: space-between;
+                align-items: start;
             }
 
             @include for-desktop-up {
