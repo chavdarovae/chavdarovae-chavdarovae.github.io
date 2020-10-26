@@ -822,7 +822,7 @@ a:hover {
 
 .course {
   max-width: 400px;
-  width: 350px;
+  width: 300px;
   min-width: 300px;
   padding: 20px 0;
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -936,8 +936,8 @@ a:hover {
   row-gap: 20px;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  -ms-grid-columns: 350px;
-      grid-template-columns: 350px;
+  -ms-grid-columns: 300px;
+      grid-template-columns: 300px;
   -ms-grid-rows: min-content min-content min-content 200px min-content;
       grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content 200px -webkit-min-content;
       grid-template-rows: min-content min-content min-content 200px min-content;
