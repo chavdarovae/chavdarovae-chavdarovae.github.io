@@ -1,0 +1,25 @@
+.project {
+    &__media {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        justify-items: center;
+
+        @include for-tablet-landscape-up {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+        }
+
+        &:hover {
+
+        }
+
+        &-img {
+            width: 300px;
+            border-radius: $primary-rad;
+            box-shadow: $secondary-shadow;
+            overflow: hidden;
+        }
+    }
+}

@@ -987,6 +987,33 @@ a:hover {
   overflow: hidden;
 }
 
+.project__media {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  row-gap: 20px;
+  justify-items: center;
+}
+
+@media (min-width: 900px) {
+  .project__media {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+
+.project__media-img {
+  width: 300px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
 .no-margin {
   margin: 0;
 }
