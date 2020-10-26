@@ -33,8 +33,12 @@ class HomePageRouter {
     handleCourseInstanceClick() {
         const { courseInstance, curCourseInstance } = selectors;
         $(courseInstance).on('click', (e) => {
-            $(curCourseInstance).removeClass('course--current');
-            $(e.target).parents(courseInstance).addClass('course--current');
+            if($(e.target).parents(courseInstance).hasClass('course--current')){
+                $(e.target).parents(courseInstance).removeClass('course--current');
+            }else{
+                $(curCourseInstance).removeClass('course--current');
+                $(e.target).parents(courseInstance).addClass('course--current');
+            }
         })
     }
 }

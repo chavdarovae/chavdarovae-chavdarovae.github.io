@@ -656,6 +656,8 @@ a:hover {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: education;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
 .main__about-education .certificate-list {
@@ -826,7 +828,7 @@ a:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  background-color: #00DAC3;
+  background-image: radial-gradient(circle, #ffffff, #e4f2ff, #acecff, #60e7f8, #00dfca);
   overflow: hidden;
   -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
   transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
@@ -834,9 +836,9 @@ a:hover {
   transition: transform 0.2s, box-shadow 0.2s ease-out, -webkit-transform 0.2s, -webkit-box-shadow 0.2s ease-out;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 250px 180px min-content;
-      grid-template-rows: 250px 180px -webkit-min-content;
-      grid-template-rows: 250px 180px min-content;
+  -ms-grid-rows: 215px 180px min-content;
+      grid-template-rows: 215px 180px -webkit-min-content;
+      grid-template-rows: 215px 180px min-content;
 }
 
 .course:hover {
@@ -879,9 +881,9 @@ a:hover {
 }
 
 .course--current {
-  -ms-grid-rows: 250px min-content min-content;
-      grid-template-rows: 250px -webkit-min-content -webkit-min-content;
-      grid-template-rows: 250px min-content min-content;
+  -ms-grid-rows: 215px min-content min-content;
+      grid-template-rows: 215px -webkit-min-content -webkit-min-content;
+      grid-template-rows: 215px min-content min-content;
 }
 
 .course--current .course__info-scope,
@@ -996,6 +998,10 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.project__title {
+  text-align: center;
 }
 
 .project__icon {

@@ -5,12 +5,12 @@
     padding: 20px 0;
     box-shadow: $secondary-shadow;
     border-radius: $primary-rad;
-    background-color: $course-color;
+    background-image: $course-color;
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s ease-out;
 
     display: grid;
-    grid-template-rows: 250px 180px min-content;
+    grid-template-rows: 215px 180px min-content;
 
     &:hover {
         transform-origin: center;
@@ -55,7 +55,7 @@
     }
 
     &--current {
-        grid-template-rows: 250px min-content min-content;
+        grid-template-rows: 215px min-content min-content;
 
         .course__info-scope,
         .course__info-link {

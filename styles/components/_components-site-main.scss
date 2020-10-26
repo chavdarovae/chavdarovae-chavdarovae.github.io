@@ -73,6 +73,7 @@
 
         &-education {
             grid-area: education;
+            justify-self: start;
 
             .certificate-list {
                 font-family: "Lato";
@@ -157,14 +158,12 @@
 
     &__experience {
         .content-container {
-    
         }
     }
 
     &__projects {
         .content-container {
-  
-           
+            
         }
 
         p {
