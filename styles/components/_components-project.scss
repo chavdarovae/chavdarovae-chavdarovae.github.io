@@ -1,10 +1,24 @@
 .project {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &__title {
+
+    }
+
+    &__icon {
+        width: 50px;
+        margin: 20px;
+    }
+
     &__media {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 20px;
         justify-items: center;
+        align-items: start;
 
         @include for-tablet-landscape-up {
             grid-template-columns: 1fr 1fr 1fr;

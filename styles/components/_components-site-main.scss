@@ -135,13 +135,12 @@
 
         &-skills {
             grid-area: skills;
+            justify-self: start;
         }
     }
 
     &__courses {
         .content-container {
-            grid-template-columns: 1fr;
-            justify-items: center;
 
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
@@ -165,9 +164,11 @@
     &__projects {
         .content-container {
   
+           
         }
 
         p {
+            width: 100%;
             margin-bottom: 10px;
         }
     }
