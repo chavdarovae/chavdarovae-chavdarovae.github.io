@@ -19,7 +19,7 @@
         row-gap: 20px;
         justify-items: center;
         align-items: start;
-        // position: relative;
+        position: relative;
 
         @include for-tablet-landscape-up {
             grid-template-columns: 1fr 1fr 1fr;
@@ -35,7 +35,7 @@
             border-radius: $primary-rad;
             box-shadow: $secondary-shadow;
             overflow: hidden;
-            transition: transform 0.6s ease;
+            // transition: transform 0.6s ease;
         }
     }
 }

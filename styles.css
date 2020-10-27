@@ -594,7 +594,7 @@ a:hover {
 }
 
 .main {
-  padding: 20px;
+  padding: 10px;
   color: #585858;
 }
 
@@ -1056,6 +1056,7 @@ a:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  position: relative;
 }
 
 @media (min-width: 900px) {
@@ -1076,10 +1077,6 @@ a:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 0.6s ease;
-  transition: -webkit-transform 0.6s ease;
-  transition: transform 0.6s ease;
-  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .no-margin {
