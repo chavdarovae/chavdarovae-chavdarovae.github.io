@@ -2,8 +2,9 @@
     padding: 20px;
     color: $text-color;
 
-    &__title,
-    &__info {
+    [class*="__title"],
+    [class*="-title"],
+    [class*="__info"] {
         justify-self: center;
 
         @include for-tablet-landscape-up {
@@ -11,10 +12,28 @@
         }
     }
 
+    [class*="-highlights"],
+    [class*="__highlights"] {
+        justify-self: center;
+        background-color: #f9f0a3;
+        padding: 20px 10px;
+        box-shadow: $secondary-shadow;
+        border-radius: $primary-rad;
+    }
+
+    [class*="-icon"] {
+        width: 50px;
+        margin: 30px;
+    }
+
+    [class*="-entry"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
     &__about {
         .content-container {
             grid-template-rows: min-content min-content min-content min-content min-content min-content;
-            justify-content: center;
 
             grid-template-areas:
                 "title"
@@ -25,9 +44,8 @@
                 "address";
 
             @include for-tablet-landscape-up {
-                grid-template-columns: 1fr 500px;
+                grid-template-columns: 1fr 400px;
                 grid-template-rows: min-content min-content min-content min-content;
-                justify-content: space-between;
 
                 grid-template-areas:
                     "title title"
@@ -35,52 +53,34 @@
                     "journey skills"
                     "education skills";
             }
-
-            @include for-desktop-up {
-            }
         }
 
         &-title {
             grid-area: title;
-            justify-self: center;
         }
 
         &-highlights {
             grid-area: highlights;
         }
 
-        &-education,
-        &-journey,
-        &-skills {
-            @include for-tablet-landscape-up {
-                justify-content: flex-start;
-            }
-
-            &-img {
-                width: 50px;
-                margin: 20px;
-            }
-
-            &-item {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
-
         &-journey {
             grid-area: journey;
+
+            @include for-tablet-landscape-up {
+                justify-content: space-between;
+            }
         }
 
         &-education {
             grid-area: education;
-            justify-self: start;
 
-            .certificate-list {
-                font-family: "Lato";
+            @include for-tablet-landscape-up {
+                justify-content: space-between;
+            }
 
+            .text-like-list {
                 li {
-                    font-size: 12px;
-                    padding: 5px 10px;
+                    opacity: 0;
                 }
             }
 
@@ -136,13 +136,15 @@
 
         &-skills {
             grid-area: skills;
-            justify-self: start;
+
+            @include for-tablet-landscape-up {
+                justify-self: start;
+            }
         }
     }
 
     &__courses {
         .content-container {
-
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
                 justify-content: space-between;
@@ -163,7 +165,6 @@
 
     &__projects {
         .content-container {
-            
         }
 
         p {

@@ -1,18 +1,22 @@
 .skill-set {
 
+    &:not(:last-child){
+        padding-bottom:15px;
+    }
+
     &__title {
         width: fit-content;
-        color: #fff;
         background-color: $primary-color;
         border: none;
         border-radius: 100px;
         box-shadow: $secondary-shadow;
+        margin: 0 auto;
         padding: 5px 22px;
-        margin: 10px auto;
+        color: #fff;
         text-transform: uppercase;
 
         @include for-tablet-landscape-up {
-            margin: 10px 0;
+            margin: 0;
         }
     }
 
@@ -25,6 +29,6 @@
     }
 
     &__list-item {
-        margin: 10px 0;
+        margin: 10px 0 0 0;
     }
 }

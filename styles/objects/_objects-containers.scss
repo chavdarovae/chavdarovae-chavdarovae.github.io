@@ -1,4 +1,7 @@
 .content-container {
+    // &>* {
+    //     border: 1px solid #000;
+    // }
     width: 100%;
     margin: 0 auto;
     display: grid;
@@ -9,6 +12,7 @@
 
     @include for-tablet-landscape-up {
         max-width: 1000px;
+        justify-items: stretch;
     }
 
     @include for-desktop-up {

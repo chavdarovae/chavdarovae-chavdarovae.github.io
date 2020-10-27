@@ -2,32 +2,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
-@-webkit-keyframes expand-and-square {
+@-webkit-keyframes fancy-list {
   0% {
-    border-radius: 50%;
-    background-color: red;
-    width: 50px;
-    height: 50px;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
   }
   100% {
-    border-radius: 0;
-    background-color: yellow;
-    width: 100px;
-    height: 100px;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
-@keyframes expand-and-square {
+@keyframes fancy-list {
   0% {
-    border-radius: 50%;
-    background-color: red;
-    width: 50px;
-    height: 50px;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
   }
   100% {
-    border-radius: 0;
-    background-color: yellow;
-    width: 100px;
-    height: 100px;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes view-img {
+  0% {
+    width: 300px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    top: 50px;
+    left: 500px;
+    width: 1000px;
+    opacity: 1;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+}
+
+@keyframes view-img {
+  0% {
+    width: 300px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    top: 50px;
+    left: 500px;
+    width: 1000px;
+    opacity: 1;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
   }
 }
 
@@ -421,6 +449,7 @@ a:hover {
 @media (min-width: 900px) {
   .content-container {
     max-width: 1000px;
+    justify-items: stretch;
   }
 }
 
@@ -498,16 +527,6 @@ a:hover {
           align-items: flex-end;
 }
 
-.highlighted {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  background-color: #f9f0a3;
-  padding: 20px 10px;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
 .text-like-list {
   list-style: square !important;
 }
@@ -579,37 +598,56 @@ a:hover {
   color: #585858;
 }
 
-.main__title, .main__info {
+.main [class*="__title"],
+.main [class*="-title"],
+.main [class*="__info"] {
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
 @media (min-width: 900px) {
-  .main__title, .main__info {
+  .main [class*="__title"],
+  .main [class*="-title"],
+  .main [class*="__info"] {
     grid-column: 1 / -1;
   }
+}
+
+.main [class*="-highlights"],
+.main [class*="__highlights"] {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #f9f0a3;
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.main [class*="-icon"] {
+  width: 50px;
+  margin: 30px;
+}
+
+.main [class*="-entry"] {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .main__about .content-container {
   -ms-grid-rows: min-content min-content min-content min-content min-content min-content;
       grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
       grid-template-rows: min-content min-content min-content min-content min-content min-content;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
       grid-template-areas: "title" "highlights" "journey" "skills" "education" "address";
 }
 
 @media (min-width: 900px) {
   .main__about .content-container {
-    -ms-grid-columns: 1fr 500px;
-        grid-template-columns: 1fr 500px;
+    -ms-grid-columns: 1fr 400px;
+        grid-template-columns: 1fr 400px;
     -ms-grid-rows: min-content min-content min-content min-content;
         grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
         grid-template-rows: min-content min-content min-content min-content;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
         grid-template-areas: "title title" "highlights address" "journey skills" "education skills";
   }
 }
@@ -618,8 +656,6 @@ a:hover {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: title;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .main__about-highlights {
@@ -628,45 +664,36 @@ a:hover {
   grid-area: highlights;
 }
 
-@media (min-width: 900px) {
-  .main__about-education, .main__about-journey, .main__about-skills {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-}
-
-.main__about-education-img, .main__about-journey-img, .main__about-skills-img {
-  width: 50px;
-  margin: 20px;
-}
-
-.main__about-education-item, .main__about-journey-item, .main__about-skills-item {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
 .main__about-journey {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: journey;
 }
 
+@media (min-width: 900px) {
+  .main__about-journey {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .main__about-education {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: education;
-  -ms-grid-column-align: start;
-      justify-self: start;
 }
 
-.main__about-education .certificate-list {
-  font-family: "Lato";
+@media (min-width: 900px) {
+  .main__about-education {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
-.main__about-education .certificate-list li {
-  font-size: 12px;
-  padding: 5px 10px;
+.main__about-education .text-like-list li {
+  opacity: 0;
 }
 
 .main__about-education .certificate-trigger {
@@ -731,8 +758,13 @@ a:hover {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: skills;
-  -ms-grid-column-align: start;
-      justify-self: start;
+}
+
+@media (min-width: 900px) {
+  .main__about-skills {
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
 }
 
 @media (min-width: 900px) {
@@ -891,24 +923,28 @@ a:hover {
   display: block;
 }
 
+.skill-set:not(:last-child) {
+  padding-bottom: 15px;
+}
+
 .skill-set__title {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  color: #fff;
   background-color: #FF3E66;
   border: none;
   border-radius: 100px;
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
   padding: 5px 22px;
-  margin: 10px auto;
+  color: #fff;
   text-transform: uppercase;
 }
 
 @media (min-width: 900px) {
   .skill-set__title {
-    margin: 10px 0;
+    margin: 0;
   }
 }
 
@@ -923,7 +959,7 @@ a:hover {
 }
 
 .skill-set__list-item {
-  margin: 10px 0;
+  margin: 10px 0 0 0;
 }
 
 .work {
@@ -1028,6 +1064,9 @@ a:hover {
         grid-template-columns: 1fr 1fr 1fr;
     -webkit-column-gap: 20px;
             column-gap: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1037,6 +1076,10 @@ a:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .no-margin {
@@ -1045,4 +1088,100 @@ a:hover {
 
 .hidden {
   display: none;
+}
+
+.animations-fancy-list li {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: fancy-list;
+          animation-name: fancy-list;
+}
+
+.animations-fancy-list li:nth-child(1) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.animations-fancy-list li:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.animations-fancy-list li:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.animations-fancy-list li:nth-child(4) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.animations-fancy-list li:nth-child(5) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animations-fancy-list li:nth-child(6) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.animations-fancy-list li:nth-child(7) {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.animations-fancy-list li:nth-child(8) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.animations-fancy-list li:nth-child(9) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.animations-fancy-list li:nth-child(10) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animations-fancy-list li:nth-child(11) {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.animations-fancy-list li:nth-child(12) {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.animations-fancy-list li:nth-child(13) {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.animations-fancy-list li:nth-child(14) {
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.animations-view-img {
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: view-img;
+          animation-name: view-img;
 }
