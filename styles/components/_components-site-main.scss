@@ -78,6 +78,21 @@
                 justify-content: space-between;
             }
 
+            h4 {
+                width: fit-content;
+                cursor: pointer;
+                position: relative;
+
+                &:after {
+                    content: attr(data-collaps);
+                    display: inline;
+                    font-size: 10px;
+                    position: absolute;
+                    top: 0;
+                    right: -13px;
+                }
+            }
+
             .text-like-list {
                 li {
                     opacity: 0;
@@ -85,34 +100,34 @@
             }
 
             //certificate-list toggle logic
-            .certificate-trigger {
-                width: fit-content;
-                cursor: pointer;
-                position: relative;
+            // .certificate-trigger {
+            //     width: fit-content;
+            //     cursor: pointer;
+            //     position: relative;
 
-                &:after {
-                    content: "▼";
-                    display: inline;
-                    font-size: 10px;
-                    position: absolute;
-                    top: 0;
-                    right: -10px;
-                }
-            }
+            //     &:after {
+            //         content: "▼";
+            //         display: inline;
+            //         font-size: 10px;
+            //         position: absolute;
+            //         top: 0;
+            //         right: -10px;
+            //     }
+            // }
 
-            #certificateToggle {
-                display: none;
-                pointer-events: none;
-                position: absolute;
-            }
+            // #certificateToggle {
+            //     display: none;
+            //     pointer-events: none;
+            //     position: absolute;
+            // }
 
-            #certificateToggle + .text-like-list {
-                display: none;
-            }
+            // #certificateToggle + .text-like-list {
+            //     display: none;
+            // }
 
-            #certificateToggle:checked + .text-like-list {
-                display: block;
-            }
+            // #certificateToggle:checked + .text-like-list {
+            //     display: block;
+            // }
         }
 
         &-address {

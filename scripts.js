@@ -6,6 +6,13 @@ const selectors = {
     curCourseInstance: '.course--current',
     img: 'div[class*="__media-img"] img',
     contentContainer: '.content-container',
+    preview: '.preview__backdrop, .preview__box',
+    previewBackdrop: '.preview__backdrop',
+    previewBox: '.preview__box',
+    previewImg: '.preview__box-img',
+    previewClose: '.preview__box-close, .preview__backdrop',
+    certificateTrigger: '#certificateTrigger',
+    certificateList: '#certificateList',
 }
 
 class HomePageRouter {
@@ -17,6 +24,8 @@ class HomePageRouter {
         this.handleNavBtnClick();
         this.handleCourseInstanceClick();
         this.handleImgClick();
+        this.handlePreviewCloseClick();
+        this.handleCertificateTriggerClick();
     }
 
     handleNavBtnClick() {
@@ -46,54 +55,67 @@ class HomePageRouter {
     }
 
     handleImgClick() {
-        const { img, contentContainer } = selectors;
-        let initialWidth = 300;
+        const { img, preview, previewBox, previewImg } = selectors;
 
         $(img).on('click', (e) => {
             const $imgDiv = $(e.target).parent();
-            const $imgHolder = $(e.target).parent().parent();
             const imgWidth = $imgDiv.width();
-            let windowWidth = $(contentContainer).width();
-            $imgHolder.children().not($imgDiv).css('width', initialWidth);
+            const imgHeight = $imgDiv.height();
+            const imgSrc = $(e.target).attr('src');
+            $(previewImg).attr('src', imgSrc);
 
-            // $.keyframe.define([{
-            //     name: 'view',
-            //     '0%': { width: 300 },
-            //     '100%': { width: 600 }
-            // }]);
-
-            // imgDiv.playKeyframe({
-            //     name: 'view', 
-            //     duration: 600, 
-            //     timingFunction: 'ease-out', // [optional, default: ease] specifies the speed curve of the animation
-            //     fillMode: 'forwards',
-            //     });
-
-            if (windowWidth < 900) {
-                windowWidth -= 40;
+            if ($(window).width() < 900) {
+                $(previewImg).width(0.95 * $(window).width() - 4);
             } else {
-                $imgHolder.children().not($imgDiv).hide();
-                $imgHolder.css('display', 'block');
-                $imgDiv.css('position', 'relative');
-            }
+                const maxWidth = 0.85 * $(window).width() - 4;
+                const maxHeight = 0.85 * $(window).height() - 22;
 
-            if (imgWidth < windowWidth) {
-                initialWidth = imgWidth;
-                $imgDiv.animate({
-                    width: windowWidth
-                }, 300);
-            } else {
-                $imgDiv.animate({
-                    width: initialWidth
-                }, 300);
+                if (imgWidth > imgHeight) {
+                    $(previewImg).height('auto');
 
-                if (windowWidth > 900) {
-                    $imgHolder.children().show();
-                    $imgDiv.css('position', 'static');
-                    $imgHolder.css('display', 'grid');
+                    if (imgWidth / imgHeight >= (16 / 9)) {
+                        $(previewImg).width(maxWidth);
+                    } else {
+                        const previewRatio = maxHeight / imgHeight;
+                        $(previewImg).width(previewRatio * imgWidth);
+                    }
+                } else {
+                    $(previewImg).width('auto');
+                    $(previewImg).height(maxHeight);
                 }
             }
 
+            $(preview).animate({ 'opacity': '.50' }, 300, 'linear');
+            $(previewBox).animate({ 'opacity': '1' }, 300, 'linear');
+            $(preview).css('display', 'block');
+        })
+    }
+
+    handlePreviewCloseClick() {
+        const { previewClose, preview } = selectors;
+        $(previewClose).on('click', (e) => {
+            $(preview).animate({ 'opacity': '0' }, 300, 'linear', () => {
+                $(preview).css('display', 'none');
+            });
+        })
+    }
+
+    handleCertificateTriggerClick() {
+        const { certificateTrigger, certificateList } = selectors;
+        $(certificateTrigger).on('click', (e) => {
+
+            const listClass = $(certificateList).attr('class')
+            if (listClass === 'text-like-list hidden') {
+                $(certificateTrigger).attr('data-collaps', '▼')
+                $(certificateList).show();
+                $(certificateList).addClass('animations-fancy-list');
+            } else {
+                $(certificateList).animate({ 'opacity': '0' }, 500, 'linear', () => {
+                    $(certificateList).css('display', 'none');
+                    $(certificateTrigger).attr('data-collaps', '►')
+                    $(certificateList).removeClass('animations-fancy-list');
+                });
+            }
         })
     }
 }

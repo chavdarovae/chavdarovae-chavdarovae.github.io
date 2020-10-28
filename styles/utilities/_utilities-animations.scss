@@ -1,6 +1,6 @@
 .animations-fancy-list {
     li {
-        animation-duration: 2s;
+        animation-duration: 0.8s;
         animation-timing-function: ease-out;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
@@ -9,18 +9,15 @@
 
     @for $i from 1 to 15 {
         li:nth-child(#{$i}) {
-            animation-delay: 0.2s * $i;
+            animation-delay: 0.1s * $i;
         }
     }
 }
 
-.animations-view-img {
-    animation-duration: 0.6s;
+.animations-fancy-list-disapear {
+    animation-duration: 0.8s;
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-name: view-img;
-
-    &:hover {
-    }
+    animation-name: fancy-list-disapear;
 }
