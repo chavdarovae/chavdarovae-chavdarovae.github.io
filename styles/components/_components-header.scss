@@ -1,0 +1,74 @@
+.header {
+    height: 70px;
+    background: #fff;
+    box-shadow: $primary-shadow;
+    color: $primary-color;
+
+    .content-container {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include for-phone-only {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            grid-column-gap: 5px;
+        }
+
+        @include for-tablet-landscape-up {
+            grid-template-columns: 50px 1fr 50px;
+            grid-column-gap: 30px;
+        }
+    }
+
+   
+
+    &__logo {
+        width: 50px;
+        padding: 10px 0;
+        position: relative;
+
+        &-lang-bar{
+            width: fit-content;
+            position: absolute;
+            background: #fff;
+            font-size: 13px;
+            line-height: 1;
+            padding: 1px;
+            border: 1px solid $primary-color;
+            cursor: pointer;
+            z-index: 1;
+            
+            &--backend {
+                top: 50%;
+                left: 0;
+                transform: translate(2px, -50%);
+    
+                @include for-tablet-landscape-up {
+                    display: none;
+                }
+            }
+    
+            &--frontend {
+                top: 50%;
+                right: 0;
+                transform: translate(-2px, -50%);
+            }
+        }
+
+        &--backend {
+            display: none;
+
+            @include for-phone-only {
+                display: block;
+            }
+        }
+
+        &--frontend {
+            display: none;
+
+            @include for-tablet-landscape-up {
+                display: block;
+            }
+        }
+    }
+}

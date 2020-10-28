@@ -26,26 +26,6 @@
   }
 }
 
-@-webkit-keyframes fancy-list-disapear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes fancy-list-disapear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -354,7 +334,7 @@ p {
 h1,
 h2,
 h3,
-h4, .h4-like-title,
+h4, .h4-like-title, .h4-like,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
@@ -376,6 +356,7 @@ h3 {
 }
 
 h4,
+.h4-like,
 .h4-like-title {
   font-size: 16px;
   line-height: 18px;
@@ -589,7 +570,7 @@ a:hover {
           box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.site-header {
+.header {
   height: 70px;
   background: #fff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -597,33 +578,87 @@ a:hover {
   color: #FF3E66;
 }
 
-.site-header .content-container {
+.header .content-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 1fr;
-      grid-template-columns: 50px 1fr;
-  grid-column-gap: 5px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 375px) {
+  .header .content-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px 1fr;
+        grid-template-columns: 50px 1fr;
+    grid-column-gap: 5px;
+  }
 }
 
 @media (min-width: 900px) {
-  .site-header .content-container {
+  .header .content-container {
     -ms-grid-columns: 50px 1fr 50px;
         grid-template-columns: 50px 1fr 50px;
     grid-column-gap: 30px;
   }
 }
 
-.site-header-logo {
+.header__logo {
   width: 50px;
   padding: 10px 0;
+  position: relative;
 }
 
-.site-header-logo--frontend {
+.header__logo-lang-bar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1;
+  padding: 1px;
+  border: 1px solid #FF3E66;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.header__logo-lang-bar--backend {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(2px, -50%);
+          transform: translate(2px, -50%);
+}
+
+@media (min-width: 900px) {
+  .header__logo-lang-bar--backend {
+    display: none;
+  }
+}
+
+.header__logo-lang-bar--frontend {
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(-2px, -50%);
+          transform: translate(-2px, -50%);
+}
+
+.header__logo--backend {
+  display: none;
+}
+
+@media (min-width: 375px) {
+  .header__logo--backend {
+    display: block;
+  }
+}
+
+.header__logo--frontend {
   display: none;
 }
 
 @media (min-width: 900px) {
-  .site-header-logo--frontend {
+  .header__logo--frontend {
     display: block;
   }
 }
@@ -816,26 +851,26 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.site-nav {
+.nav {
   height: 70px;
   margin-left: auto;
 }
 
-.site-nav__list {
+.nav__list {
   height: 100%;
 }
 
-.site-nav__list-item {
+.nav__list-item {
   height: 100%;
 }
 
-.site-nav__list-item:last-child {
+.nav__list-item:last-child {
   margin-right: 10px;
 }
 
-.site-nav__list-link {
+.nav__list-link {
   height: 100%;
-  padding: 0 7px;
+  padding: 0 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -845,24 +880,30 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: color 0.23s ease-out;
-  transition: color 0.23s ease-out;
+  -webkit-transition: color 0.4s, background-color 0.4s ease-out;
+  transition: color 0.4s, background-color 0.4s ease-out;
   position: relative;
 }
 
+@media (min-width: 375px) {
+  .nav__list-link {
+    padding: 0 7px;
+  }
+}
+
 @media (min-width: 900px) {
-  .site-nav__list-link {
+  .nav__list-link {
     padding: 0 15px;
   }
 }
 
-.site-nav__list-link:hover {
+.nav__list-link:hover {
   text-decoration: none;
   color: #FF3E66;
   background-color: #F8F8F8;
 }
 
-.site-nav__list-link--current:before {
+.nav__list-link--current:before {
   content: "";
   display: block;
   height: 5px;
@@ -995,9 +1036,9 @@ a:hover {
           column-gap: 20px;
   -ms-grid-columns: 300px;
       grid-template-columns: 300px;
-  -ms-grid-rows: min-content min-content min-content 200px min-content;
-      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content 200px -webkit-min-content;
-      grid-template-rows: min-content min-content min-content 200px min-content;
+  -ms-grid-rows: min-content min-content min-content min-content min-content;
+      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
+      grid-template-rows: min-content min-content min-content min-content min-content;
       grid-template-areas: "period" "position" "employer" "image" "description";
 }
 
@@ -1005,16 +1046,20 @@ a:hover {
   .work {
     -ms-grid-columns: 300px 1fr 200px;
         grid-template-columns: 300px 1fr 200px;
-    -ms-grid-rows: 30px 20px 110px;
-        grid-template-rows: 30px 20px 110px;
-        grid-template-areas: "image position period" "image employer employerF" "image description description";
+    -ms-grid-rows: 30px 20px min-content;
+        grid-template-rows: 30px 20px -webkit-min-content;
+        grid-template-rows: 30px 20px min-content;
+        grid-template-areas: "image position period" "image employer employer" "image description description";
   }
 }
 
-.work__img {
+.work__media-img {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: image;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   overflow: hidden;
   border-radius: 4px;
 }
@@ -1189,17 +1234,4 @@ a:hover {
 .animations-fancy-list li:nth-child(14) {
   -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s;
-}
-
-.animations-fancy-list-disapear {
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-name: fancy-list-disapear;
-          animation-name: fancy-list-disapear;
 }

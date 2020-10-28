@@ -1,7 +1,7 @@
 const selectors = {
     main: '.main',
-    navBtn: '.site-nav__list-link',
-    curNavBtn: '.site-nav__list-link--current',
+    navBtn: '.nav__list-link',
+    curNavBtn: '.nav__list-link--current',
     courseInstance: '.course',
     curCourseInstance: '.course--current',
     img: 'div[class*="__media-img"] img',
@@ -13,6 +13,10 @@ const selectors = {
     previewClose: '.preview__box-close, .preview__backdrop',
     certificateTrigger: '#certificateTrigger',
     certificateList: '#certificateList',
+    languageToggle: '.header__logo-lang-bar',
+    englishVersion: '#englishVersion',
+    germanVersion: '#germanVersion',
+
 }
 
 class HomePageRouter {
@@ -26,13 +30,14 @@ class HomePageRouter {
         this.handleImgClick();
         this.handlePreviewCloseClick();
         this.handleCertificateTriggerClick();
+        this.handleLanguageToggleClick();
     }
 
     handleNavBtnClick() {
         const { navBtn, main, curCourseInstance, curNavBtn } = selectors;
         $(navBtn).on('click', (e) => {
-            $(curNavBtn).removeClass('site-nav__list-link--current');
-            $(e.target).addClass('site-nav__list-link--current');
+            $(curNavBtn).removeClass('nav__list-link--current');
+            $(e.target).addClass('nav__list-link--current');
             const mainComponentId = '#' + e.target.text.toLowerCase();
             if (mainComponentId === '#courses') {
                 $(curCourseInstance).removeClass('course--current');
@@ -110,11 +115,26 @@ class HomePageRouter {
                 $(certificateList).show();
                 $(certificateList).addClass('animations-fancy-list');
             } else {
-                $(certificateList).animate({ 'opacity': '0' }, 500, 'linear', () => {
+                $(certificateList).find('li').animate({ 'opacity': '0' }, 500, 'linear', () => {
                     $(certificateList).css('display', 'none');
                     $(certificateTrigger).attr('data-collaps', '►')
                     $(certificateList).removeClass('animations-fancy-list');
                 });
+            }
+        })
+    }
+
+    handleLanguageToggleClick() {
+        const { languageToggle, englishVersion, germanVersion } = selectors;
+        $(languageToggle).on('click', (e) => {
+            if($(e.target).text()==='EN'){
+                $(e.target).text('DE');
+                $(englishVersion).hide();
+                $(germanVersion).show();
+            }else if($(e.target).text()==='DE'){
+                $(e.target).text('EN');
+                $(germanVersion).hide();
+                $(englishVersion).show();
             }
         })
     }
