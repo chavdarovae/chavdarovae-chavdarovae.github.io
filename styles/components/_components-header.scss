@@ -8,7 +8,7 @@
         display: grid;
         grid-template-columns: 1fr;
 
-        @include for-phone-only {
+        @include for-phone-up {
             display: grid;
             grid-template-columns: 50px 1fr;
             grid-column-gap: 5px;
@@ -34,6 +34,7 @@
             line-height: 1;
             padding: 1px;
             border: 1px solid $primary-color;
+            width: 23px;
             cursor: pointer;
             z-index: 5;
             
@@ -57,7 +58,7 @@
         &--backend {
             display: none;
 
-            @include for-phone-only {
+            @include for-phone-up {
                 display: block;
             }
         }

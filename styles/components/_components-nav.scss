@@ -23,7 +23,7 @@
         transition: color 0.4s, background-color 0.4s ease-out;
         position: relative;
 
-        @include for-phone-only {
+        @include for-phone-up {
             padding: 0 7px;
         }
 

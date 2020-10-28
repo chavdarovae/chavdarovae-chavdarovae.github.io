@@ -616,6 +616,7 @@ a:hover {
   line-height: 1;
   padding: 1px;
   border: 1px solid #FF3E66;
+  width: 23px;
   cursor: pointer;
   z-index: 5;
 }
@@ -824,9 +825,7 @@ a:hover {
   .main__courses .content-container {
     -ms-grid-columns: 400px 400px;
         grid-template-columns: 400px 400px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-items: center;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
@@ -837,9 +836,7 @@ a:hover {
   .main__courses .content-container {
     -ms-grid-columns: 400px 400px 400px;
         grid-template-columns: 400px 400px 400px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-items: center;
   }
 }
 

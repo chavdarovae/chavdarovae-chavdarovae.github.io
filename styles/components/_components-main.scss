@@ -162,13 +162,13 @@
         .content-container {
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 400px;
-                justify-content: space-between;
+                justify-items: center;
                 align-items: start;
             }
 
             @include for-desktop-up {
                 grid-template-columns: 400px 400px 400px;
-                justify-content: space-between;
+                justify-items: center;
             }
         }
     }
