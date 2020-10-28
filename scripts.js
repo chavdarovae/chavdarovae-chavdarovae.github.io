@@ -15,7 +15,6 @@ const selectors = {
     certificateList: '#certificateList',
     languageToggle: '.header__logo-lang-bar',
     englishVersion: '#englishVersion',
-    germanVersion: '#germanVersion',
 
 }
 
@@ -129,12 +128,12 @@ class HomePageRouter {
         $(languageToggle).on('click', (e) => {
             if($(e.target).text()==='EN'){
                 $(e.target).text('DE');
-                $(englishVersion).hide();
-                $(germanVersion).show();
+                // $(englishVersion).hide();
+                // $(germanVersion).show();
             }else if($(e.target).text()==='DE'){
                 $(e.target).text('EN');
-                $(germanVersion).hide();
-                $(englishVersion).show();
+                // $(germanVersion).hide();
+                // $(englishVersion).show();
             }
         })
     }
