@@ -610,9 +610,6 @@ a:hover {
 }
 
 .header__logo-lang-bar {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   position: absolute;
   background: #fff;
   font-size: 13px;
@@ -620,7 +617,7 @@ a:hover {
   padding: 1px;
   border: 1px solid #FF3E66;
   cursor: pointer;
-  z-index: 1;
+  z-index: 5;
 }
 
 .header__logo-lang-bar--backend {

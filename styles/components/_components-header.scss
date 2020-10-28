@@ -28,7 +28,6 @@
         position: relative;
 
         &-lang-bar{
-            width: fit-content;
             position: absolute;
             background: #fff;
             font-size: 13px;
@@ -36,7 +35,7 @@
             padding: 1px;
             border: 1px solid $primary-color;
             cursor: pointer;
-            z-index: 1;
+            z-index: 5;
             
             &--backend {
                 top: 50%;
