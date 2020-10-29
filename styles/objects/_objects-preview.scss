@@ -39,11 +39,13 @@
   }
 
   &-description {
-    width: 100%;
+    width: calc(100% - 30px);
     text-align: center;
     top: 0;
     left: 0;
-    padding: 3px 30px 3px 30px;
+    padding: 3px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &-control {
@@ -52,17 +54,19 @@
     z-index: 12;
 
     &--backwards {
-      left: 3px;
+      display: none;
 
       @include for-tablet-landscape-up {
+        display: block;
         left: -50px;
       }
     }
 
     &--forwards {
-      right: 3px;
+      display: none;
 
       @include for-tablet-landscape-up {
+        display: block;
         right: -50px;
       }
     }

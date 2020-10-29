@@ -33,6 +33,8 @@ class HomePageRouter {
         this.handlePreviewCloseClick();
         this.handleCertificateTriggerClick();
         this.handleLanguageToggleClick();
+        this.handlePreviewImgSipeleft();
+        this.handlePreviewImgSiperight();
 
     }
 
@@ -111,22 +113,20 @@ class HomePageRouter {
     }
 
     handlePreviewControlClick() {
-        const { previewControl, previewImg } = selectors;
+        const { previewControl, previewImg, previewDescription } = selectors;
         $(previewControl).on('click', (e) => {
             const previewControlClass = $(e.target).parent().attr('class');
-            let relPath = $(previewImg).attr('src').split('/');
-            
-            let lastElem = Number(relPath.pop().replace('.png',''));
-            if(previewControlClass.includes('forwards')) {
-                lastElem++;
-            }else if (previewControlClass.includes('backwards')){
-                lastElem--;
-            }else {
-                return;
+
+
+            let $newPrevImage = '';
+            if (previewControlClass.includes('forwards')) {
+                this.changePreviewImage('next')
+            } else if (previewControlClass.includes('backwards')) {
+                this.changePreviewImage('previous')
             }
-            relPath.push(lastElem);  
-            relPath=relPath.join('/') + '.png'; 
-            $(previewImg).attr('src', relPath)       
+
+            $(previewImg).attr('src', $newPrevImage.attr('src'));
+            $(previewDescription).text($newPrevImage.attr('alt'));
         })
     }
 
@@ -1816,6 +1816,35 @@ class HomePageRouter {
                 this.init();
             }
         })
+    }
+
+    handlePreviewImgSipeleft() {
+        const { previewImg } = selectors;
+        $(previewImg).on('swipeleft', (e) => {
+            this.changePreviewImage('previous')
+        })
+    }
+
+    handlePreviewImgSiperight() {
+        const { previewImg } = selectors;
+        $(previewImg).on('swiperight', (e) => {
+            this.changePreviewImage('next')
+        })
+    }
+
+    changePreviewImage(position) {
+        const { previewImg, previewDescription } = selectors;
+        const relPath = $(previewImg).attr('src');
+        const $thumbnailImg = $('div[class$="-img"]').find(`img[src="${relPath}"]`).not('.preview__box-img');
+
+        let $newPrevImage = '';
+        if(position==='next'){
+            $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]').find('img');
+        }else if(position==='previous'){
+            $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
+        }
+        $(previewImg).attr('src', $newPrevImage.attr('src'));
+        $(previewDescription).text($newPrevImage.attr('alt'));
     }
 }
 
