@@ -2,11 +2,11 @@
   display: none;
   max-width: 98vw;
   max-height: 98vh;
-  background: #ffffff;
+  background: #f0f0f0;
   padding: 20px 2px 2px 2px;
   border-radius: $primary-rad;
   box-shadow: $primary-shadow;
-  overflow: hidden;
+  // overflow: hidden;
 
   position: fixed;
   left: 50%;
@@ -20,16 +20,49 @@
   @include for-desktop-up {
   }
 
-  &-close {
+  &-close,
+  &-description,
+  &-control {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 3px 10px;
     cursor: pointer;
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: $text-color;
+  }
+
+  &-close {
+    top: 0;
+    right: 0;
+    padding: 3px 10px;
+    cursor: pointer;
+  }
+
+  &-description {
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 3px 30px 3px 30px;
+  }
+
+  &-control {
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 12;
+
+    &--backwards {
+      left: -50px;
+    }
+
+    &--forwards {
+      right: -50px;
+    }
+
+    i {
+      color: #f0f0f0;
+      font-size: 100px;
+    }
   }
 
   &-img {

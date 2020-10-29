@@ -10,11 +10,13 @@ const selectors = {
     previewBackdrop: '.preview__backdrop',
     previewBox: '.preview__box',
     previewImg: '.preview__box-img',
+    previewDescription: '.preview__box-description',
+    previewControl: '.preview__box-control',
     previewClose: '.preview__box-close, .preview__backdrop',
     certificateTrigger: '#certificateTrigger',
     certificateList: '#certificateList',
     languageToggle: '.header__logo-lang-bar, .header__logo img',
-    
+
 
 }
 
@@ -27,10 +29,11 @@ class HomePageRouter {
         this.handleNavBtnClick();
         this.handleCourseInstanceClick();
         this.handleImgClick();
+        this.handlePreviewControlClick();
         this.handlePreviewCloseClick();
         this.handleCertificateTriggerClick();
         this.handleLanguageToggleClick();
- 
+
     }
 
     handleNavBtnClick() {
@@ -60,14 +63,16 @@ class HomePageRouter {
     }
 
     handleImgClick() {
-        const { img, preview, previewBox, previewImg } = selectors;
+        const { img, preview, previewBox, previewImg, previewDescription } = selectors;
 
         $(img).on('click', (e) => {
             const $imgDiv = $(e.target).parent();
             const imgWidth = $imgDiv.width();
             const imgHeight = $imgDiv.height();
             const imgSrc = $(e.target).attr('src');
+            const imgDescription = $(e.target).attr('alt');
             $(previewImg).attr('src', imgSrc);
+            $(previewDescription).text(imgDescription);
 
             if ($(window).width() < 900) {
                 $(previewImg).width(0.95 * $(window).width() - 4);
@@ -105,6 +110,26 @@ class HomePageRouter {
         })
     }
 
+    handlePreviewControlClick() {
+        const { previewControl, previewImg } = selectors;
+        $(previewControl).on('click', (e) => {
+            const previewControlClass = $(e.target).parent().attr('class');
+            let relPath = $(previewImg).attr('src').split('/');
+            
+            let lastElem = Number(relPath.pop().replace('.png',''));
+            if(previewControlClass.includes('forwards')) {
+                lastElem++;
+            }else if (previewControlClass.includes('backwards')){
+                lastElem++;
+            }else {
+                return;
+            }
+            relPath.push(lastElem);  
+            relPath=relPath.join('/') + '.png'; 
+            $(previewImg).attr('src', relPath)       
+        })
+    }
+
     handleCertificateTriggerClick() {
         const { certificateTrigger, certificateList } = selectors;
         $(certificateTrigger).on('click', (e) => {
@@ -129,7 +154,7 @@ class HomePageRouter {
         $(languageToggle).on('click', (e) => {
 
             const $languageBar = $(e.target).parents('.header__logo').find('.header__logo-lang-bar');
-            if(!$languageBar.is(':visible')) return;
+            if (!$languageBar.is(':visible')) return;
 
             if ($languageBar.text() === 'EN') {
                 $languageBar.text('DE');
