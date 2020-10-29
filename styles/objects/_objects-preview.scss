@@ -52,11 +52,19 @@
     z-index: 12;
 
     &--backwards {
-      left: -50px;
+      left: 3px;
+
+      @include for-tablet-landscape-up {
+        left: -50px;
+      }
     }
 
     &--forwards {
-      right: -50px;
+      right: 3px;
+
+      @include for-tablet-landscape-up {
+        right: -50px;
+      }
     }
 
     i {
