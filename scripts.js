@@ -120,7 +120,7 @@ class HomePageRouter {
             if(previewControlClass.includes('forwards')) {
                 lastElem++;
             }else if (previewControlClass.includes('backwards')){
-                lastElem++;
+                lastElem--;
             }else {
                 return;
             }
