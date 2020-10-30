@@ -201,13 +201,13 @@ class HomePageRouter {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
         }
 
-        if ($control !== undefined) {
-            if ($newPrevImage.length === 0 && $control.length !== 0) {
+        if ($newPrevImage.length === 0) {
+            if ( $control !== undefined) {
                 $control.css('opacity', '0');
-                return;
             }
-        }
-
+            return;
+        } 
+  
         $(previewImg).css('opacity', '0');
         this.displayPreviewImg($newPrevImage);
         $(previewImg).animate({ opacity: '1' }, 600, 'linear');

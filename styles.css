@@ -591,9 +591,10 @@ a:hover {
   background: #fff;
   font-size: 13px;
   line-height: 1;
-  padding: 1px;
+  padding: 2.5px 2px;
   border: 1px solid #FF3E66;
   width: 23px;
+  height: 19px;
   cursor: pointer;
   z-index: 5;
 }
