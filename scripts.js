@@ -33,9 +33,9 @@ class HomePageRouter {
         this.handlePreviewControlClick();
         this.handlePreviewCloseClick();
         this.handleCertificateTriggerClick();
-        this.handleLanguageToggleClick();
         this.handlePreviewImgSipeleft();
         this.handlePreviewImgSiperight();
+        this.handleLanguageToggleClick();
 
     }
 
@@ -90,11 +90,22 @@ class HomePageRouter {
         $(previewDescription).text(imgDescription);
         $(previewControl).css('opacity', 1);
 
+        let maxWidth = 0;
+        let maxHeight = 0;
+
         if ($(window).width() < 900) {
-            $(previewImg).width(0.85 * $(window).width() - 10);
+            maxWidth = 0.90 * $(window).width() - 10;
+            maxHeight = 0.90 * $(window).height() - 30;
+            if (imgWidth > imgHeight) {
+                $(previewImg).height('auto');
+                $(previewImg).width(maxWidth);
+            } else {
+                $(previewImg).width('auto');
+                $(previewImg).height(maxHeight);
+            }
         } else {
-            const maxWidth = 0.85 * $(window).width() - 10;
-            const maxHeight = 0.85 * $(window).height() - 30;
+            maxWidth = 0.85 * $(window).width() - 10;
+            maxHeight = 0.85 * $(window).height() - 30;
 
             if (imgWidth > imgHeight) {
                 $(previewImg).height('auto');
@@ -105,6 +116,8 @@ class HomePageRouter {
                 $(previewImg).height(maxHeight);
             }
         }
+
+
     }
 
     handlePreviewCloseClick() {
@@ -149,28 +162,6 @@ class HomePageRouter {
         })
     }
 
-    handleLanguageToggleClick() {
-        const { languageToggle } = selectors;
-
-        $(languageToggle).on('click', (e) => {
-            const $languageBar = $(e.target).parents('.header__logo').find('.header__logo-lang-bar');
-            if (!$languageBar.is(':visible')) return;
-
-            if ($languageBar.text() === 'EN') {
-                $languageBar.text('DE');
-                // $('body').empty();
-                // $('body').append($bodyContentDe);
-                // this.init();
-
-            } else if ($languageBar.text() === 'DE') {
-                $languageBar.text('EN');
-                // $('body').empty();
-                // $('body').append($bodyContentEn);
-                // this.init();
-            }
-        })
-    }
-
     handlePreviewImgSipeleft() {
         const { previewImg } = selectors;
 
@@ -199,13 +190,31 @@ class HomePageRouter {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
         }
 
-        if($newPrevImage.length === 0 && $control.length !== 0){
-            $control.css('opacity', '0');  
-            return;  
+        if ($newPrevImage.length === 0 && $control.length !== 0) {
+            $control.css('opacity', '0');
+            return;
         }
         $(previewImg).css('opacity', '0');
         this.displayPreviewImg($newPrevImage);
         $(previewImg).animate({ opacity: '1' }, 600, 'linear');
+    }
+
+    handleLanguageToggleClick() {
+        const { languageToggle } = selectors;
+
+        $(languageToggle).on('click', (e) => {
+            const $languageBar = $(e.target).parents('.header__logo').find('.header__logo-lang-bar');
+            if (!$languageBar.is(':visible')) return;
+
+            if ($languageBar.text() === 'EN') {
+                $languageBar.text('DE');
+                switchLanguageTo('DE');
+            } else if ($languageBar.text() === 'DE') {
+                $languageBar.text('EN');
+                switchLanguageTo('EN');
+            }
+            this.init();
+        })
     }
 }
 
