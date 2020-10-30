@@ -14,7 +14,7 @@
 
     &:hover {
         transform-origin: center;
-        transform: scale(1.01);
+        transform: scale(1.02);
         box-shadow: $hover-shadow;
     }
 
@@ -35,10 +35,14 @@
         }
 
         &-scope {
+            li {
+                opacity: 0;
+            }
         }
 
         &-link {
             margin: 20px 0;
+            opacity: 0;
 
             a {
                 color: $primary-color;

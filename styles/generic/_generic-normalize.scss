@@ -281,3 +281,10 @@ Add the correct display in Chrome and Safari.
 summary {
 	display: list-item;
 }
+
+/*
+Hides the mobile loader
+*/
+.ui-loader {
+	display: none !important;
+ }
