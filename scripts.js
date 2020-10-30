@@ -101,7 +101,8 @@ class HomePageRouter {
                 $(previewImg).width(maxWidth);
             } else {
                 $(previewImg).width('auto');
-                $(previewImg).height(maxHeight);
+                const previewRatio = maxWidth/ imgWidth;
+                $(previewImg).height(previewRatio * imgHeight);
             }
         } else {
             maxWidth = 0.85 * $(window).width() - 10;
