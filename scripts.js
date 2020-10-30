@@ -100,25 +100,35 @@ class HomePageRouter {
                 $(previewImg).height('auto');
                 $(previewImg).width(maxWidth);
             } else {
-                $(previewImg).width('auto');
-                const previewRatio = maxWidth/ imgWidth;
-                $(previewImg).height(previewRatio * imgHeight);
+                let previewRatio = maxWidth / imgWidth;
+                if (previewRatio * imgHeight <= maxHeight) {
+                    $(previewImg).height(previewRatio * imgHeight);
+                    $(previewImg).width('auto');
+                } else {
+                    previewRatio = maxHeight / imgHeight;
+                    $(previewImg).width(previewRatio * imgWidth);
+                    $(previewImg).height('auto');
+                }
             }
         } else {
             maxWidth = 0.85 * $(window).width() - 10;
             maxHeight = 0.85 * $(window).height() - 30;
 
             if (imgWidth > imgHeight) {
-                $(previewImg).height('auto');
-                const previewRatio = maxHeight / imgHeight;
-                $(previewImg).width(previewRatio * imgWidth);
+                let previewRatio = maxHeight / imgHeight;
+                if (previewRatio * imgWidth <= maxWidth) {
+                    $(previewImg).height('auto');
+                    $(previewImg).width(previewRatio * imgWidth);
+                } else {
+                    previewRatio = maxWidth / imgWidth;
+                    $(previewImg).width('auto');
+                    $(previewImg).height(previewRatio * imgHeight);
+                }
             } else {
                 $(previewImg).width('auto');
                 $(previewImg).height(maxHeight);
             }
         }
-
-
     }
 
     handlePreviewCloseClick() {
@@ -191,10 +201,13 @@ class HomePageRouter {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
         }
 
-        if ($newPrevImage.length === 0 && $control.length !== 0) {
-            $control.css('opacity', '0');
-            return;
+        if ($control !== undefined) {
+            if ($newPrevImage.length === 0 && $control.length !== 0) {
+                $control.css('opacity', '0');
+                return;
+            }
         }
+
         $(previewImg).css('opacity', '0');
         this.displayPreviewImg($newPrevImage);
         $(previewImg).animate({ opacity: '1' }, 600, 'linear');
