@@ -6,6 +6,7 @@
     [class*="-title"],
     [class*="__info"] {
         justify-self: center;
+        margin: 10px 0;
 
         @include for-tablet-landscape-up {
             grid-column: 1 / -1;
@@ -44,14 +45,14 @@
                 "address";
 
             @include for-tablet-landscape-up {
-                grid-template-columns: 1fr 400px;
+                grid-template-columns: 400px 1fr;
                 grid-template-rows: min-content min-content min-content min-content;
 
                 grid-template-areas:
                     "title title"
-                    "highlights address"
-                    "journey skills"
-                    "education skills";
+                    " address highlights"
+                    "skills journey"
+                    "skills education";
             }
         }
 

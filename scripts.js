@@ -201,6 +201,7 @@ class HomePageRouter {
         if (position === 'next') {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]').find('img');
             console.log($thumbnailImg.parents('div[class$="-img"]'));
+            console.log($thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]'));
             console.log($newPrevImage);
         } else if (position === 'previous') {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');

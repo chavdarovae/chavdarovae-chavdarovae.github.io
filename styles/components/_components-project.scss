@@ -27,16 +27,16 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
 
-        &--mobile {
-            @include for-tablet-landscape-up {
-                grid-template-rows: min-content 1fr;
-                grid-template-columns: repeat(8, 100px);
-            }
+        // &--mobile {
+        //     @include for-tablet-landscape-up {
+        //         grid-template-rows: min-content 1fr;
+        //         grid-template-columns: repeat(8, 100px);
+        //     }
 
-            @include for-desktop-up {
-                grid-template-columns: repeat(12, 100px);
-            }
-        }
+        //     @include for-desktop-up {
+        //         grid-template-columns: repeat(12, 100px);
+        //     }
+        // }
 
         &:hover {
         }
