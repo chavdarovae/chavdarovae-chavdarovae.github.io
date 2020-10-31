@@ -18,7 +18,6 @@ const selectors = {
     certificateList: '#certificateList',
     languageToggle: '.header__logo-lang-bar, .header__logo img',
 
-
 }
 
 class HomePageRouter {
@@ -70,6 +69,9 @@ class HomePageRouter {
 
         $(img).on('click', (e) => {
             this.displayPreviewImg($(e.target));
+            $('body').css('overflow', 'hidden');
+
+            disableScroll();
 
             $(previewSet).animate({ 'opacity': '.50' }, 300, 'linear');
             $(preview).animate({ 'opacity': '1' }, 300, 'linear');
@@ -94,7 +96,7 @@ class HomePageRouter {
         let maxHeight = 0;
 
         if ($(window).width() < 900) {
-            maxWidth = 0.90 * $(window).width() - 10;
+            maxWidth = 0.80 * $(window).width() - 10;
             maxHeight = 0.90 * $(window).height() - 30;
             if (imgWidth > imgHeight) {
                 $(previewImg).height('auto');
@@ -134,6 +136,7 @@ class HomePageRouter {
     handlePreviewCloseClick() {
         const { previewClose, previewSet } = selectors;
         $(previewClose).on('click', () => {
+            enableScroll();
             $(previewSet).animate({ 'opacity': '0' }, 300, 'linear', () => {
                 $(previewSet).css('display', 'none');
             });
@@ -147,9 +150,9 @@ class HomePageRouter {
             const previewControlClass = $(e.target).parent().attr('class');
 
             if (previewControlClass.includes('forwards')) {
-                this.changePreviewImage('next', $(e.target).parent())
+                this.changePreviewImage('next', $(e.target).parent());
             } else if (previewControlClass.includes('backwards')) {
-                this.changePreviewImage('previous', $(e.target).parent())
+                this.changePreviewImage('previous', $(e.target).parent());
             }
         })
     }
@@ -197,17 +200,19 @@ class HomePageRouter {
         let $newPrevImage = '';
         if (position === 'next') {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]').find('img');
+            console.log($thumbnailImg.parents('div[class$="-img"]'));
+            console.log($newPrevImage);
         } else if (position === 'previous') {
             $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
         }
 
         if ($newPrevImage.length === 0) {
-            if ( $control !== undefined) {
+            if ($control !== undefined) {
                 $control.css('opacity', '0');
             }
             return;
-        } 
-  
+        }
+
         $(previewImg).css('opacity', '0');
         this.displayPreviewImg($newPrevImage);
         $(previewImg).animate({ opacity: '1' }, 600, 'linear');
@@ -233,3 +238,5 @@ class HomePageRouter {
 }
 
 window.HomePageRouter = HomePageRouter;
+
+

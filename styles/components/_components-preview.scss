@@ -1,11 +1,12 @@
 .preview {
   width: 100vw;
   height: 100vh;
+  padding: 0 3px;
   display: none;
-  grid-template-columns: 90vw;
+  grid-template-columns: 5vw 80vw 5vw;
   justify-items: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   z-index: 10;
   position: fixed;
   left: 50%;
@@ -14,6 +15,7 @@
 
   @include for-tablet-landscape-up {
     grid-template-columns: 5vw 85vw 5vw;
+    justify-content: space-around;
   }
 
   &__box {
@@ -67,25 +69,29 @@
   &__control {
     z-index: 12;
 
-    &--backwards {
-      display: none;
+    // &--backwards {
+    //   display: none;
 
-      @include for-tablet-landscape-up {
-        display: block;
-      }
-    }
+    //   @include for-tablet-landscape-up {
+    //     display: block;
+    //   }
+    // }
 
-    &--forwards {
-      display: none;
+    // &--forwards {
+    //   display: none;
 
-      @include for-tablet-landscape-up {
-        display: block;
-      }
-    }
+    //   @include for-tablet-landscape-up {
+    //     display: block;
+    //   }
+    // }
 
     i {
       color: #f0f0f0;
-      font-size: 200px;
+      font-size: 60px;
+
+      @include for-tablet-landscape-up {
+        font-size: 200px;
+      }
     }
   }
 
