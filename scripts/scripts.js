@@ -10,9 +10,12 @@ const selectors = {
     preview: '.preview',
     previewBackdrop: '.preview__backdrop',
     previewBox: '.preview__box',
+    previewIndicator: '.preview__indicator',
     previewImg: '.preview__box-img',
     previewDescription: '.preview__box-description',
     previewControl: '.preview__control',
+    previewBackwards: '.preview__control--backwards',
+    previewForwards: '.preview__control--forwards',
     previewClose: '.preview__box-close, .preview__backdrop',
     certificateTrigger: '#certificateTrigger',
     certificateList: '#certificateList',
@@ -80,9 +83,9 @@ class HomePageRouter {
     }
 
     displayPreviewImg($img) {
-        const { previewImg, previewDescription, previewControl } = selectors;
-
+        const { previewImg, previewDescription, previewBackwards, previewForwards, previewIndicator } = selectors;
         const $imgDiv = $img.parent();
+        const $allImagesInAlbum = $img.parents('div[class$="__media"]').find('img');
         const imgWidth = $imgDiv.width();
         const imgHeight = $imgDiv.height();
         const imgSrc = $img.attr('src');
@@ -90,7 +93,17 @@ class HomePageRouter {
 
         $(previewImg).attr('src', imgSrc);
         $(previewDescription).text(imgDescription);
-        $(previewControl).css('opacity', 1);
+        $(previewIndicator).empty();
+
+        $.each($allImagesInAlbum, (i, img) => {
+            const currSrc = $(img).attr('src');
+            if (currSrc === imgSrc) {
+                $(previewIndicator).append(`<span class="preview__indicator-item preview__indicator-item--current" data-src=${currSrc}></span>`)
+            } else {
+                $(previewIndicator).append(`<span class="preview__indicator-item" data-src=${currSrc}></span>`)
+            }
+        });
+
 
         let maxWidth = 0;
         let maxHeight = 0;
@@ -131,6 +144,17 @@ class HomePageRouter {
                 $(previewImg).height(maxHeight);
             }
         }
+
+        if ($img.parent().next('div[class$="-img"]').find('img').length === 0) {
+            $(previewForwards).addClass('invisible')
+        } else {
+            $(previewForwards).removeClass('invisible');
+        }
+        if ($img.parent().prev('div[class$="-img"]').find('img').length === 0) {
+            $(previewBackwards).addClass('invisible')
+        } else {
+            $(previewBackwards).removeClass('invisible');
+        }
     }
 
     handlePreviewCloseClick() {
@@ -150,9 +174,9 @@ class HomePageRouter {
             const previewControlClass = $(e.target).parent().attr('class');
 
             if (previewControlClass.includes('forwards')) {
-                this.changePreviewImage('next', $(e.target).parent());
+                this.changePreviewImage('next');
             } else if (previewControlClass.includes('backwards')) {
-                this.changePreviewImage('previous', $(e.target).parent());
+                this.changePreviewImage('previous');
             }
         })
     }
@@ -192,26 +216,17 @@ class HomePageRouter {
         })
     }
 
-    changePreviewImage(position, $control) {
+    changePreviewImage(position) {
         const { previewImg } = selectors;
+
         const relPath = $(previewImg).attr('src');
         const $thumbnailImg = $('div[class$="-img"]').find(`img[src="${relPath}"]`).not('.preview__box-img');
 
         let $newPrevImage = '';
         if (position === 'next') {
-            $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]').find('img');
-            console.log($thumbnailImg.parents('div[class$="-img"]'));
-            console.log($thumbnailImg.parents('div[class$="-img"]').next('div[class$="-img"]'));
-            console.log($newPrevImage);
+            $newPrevImage = $thumbnailImg.parent().next('div[class$="-img"]').find('img');
         } else if (position === 'previous') {
-            $newPrevImage = $thumbnailImg.parents('div[class$="-img"]').prev('div[class$="-img"]').find('img');
-        }
-
-        if ($newPrevImage.length === 0) {
-            if ($control !== undefined) {
-                $control.css('opacity', '0');
-            }
-            return;
+            $newPrevImage = $thumbnailImg.parent().prev('div[class$="-img"]').find('img');
         }
 
         $(previewImg).css('opacity', '0');
