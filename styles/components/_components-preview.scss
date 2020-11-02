@@ -3,23 +3,27 @@
   height: 100vh;
   padding: 0 3px;
   display: none;
-  grid-template-columns: 5vw 80vw 5vw;
+  grid-template-columns: 25vw 50vw 25vw;
   grid-template-rows: 90vh 10vh;
   justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  align-content: space-around;
   z-index: 10;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
+  grid-template-areas:
+    "box box box"
+    "backwards indicator forwards";
+
   @include for-tablet-landscape-up {
-    grid-template-columns: 5vw 85vw 5vw;
-    justify-content: space-around;
+    grid-template-rows: 85vh 15vh;
   }
 
   &__box {
+    grid-area: box;
     max-width: 90vw;
     max-height: 90vh;
     background: #f0f0f0;
@@ -70,28 +74,20 @@
   &__control {
     z-index: 12;
 
-    // &--backwards {
-    //   display: none;
+    &--backwards {
+      grid-area: backwards;
+    }
 
-    //   @include for-tablet-landscape-up {
-    //     display: block;
-    //   }
-    // }
-
-    // &--forwards {
-    //   display: none;
-
-    //   @include for-tablet-landscape-up {
-    //     display: block;
-    //   }
-    // }
+    &--forwards {
+      grid-area: forwards;
+    }
 
     i {
       color: #f0f0f0;
       font-size: 60px;
 
       @include for-tablet-landscape-up {
-        font-size: 200px;
+        font-size: 100px;
       }
     }
   }
@@ -111,8 +107,9 @@
   }
 
   &__indicator {
-    position: relative;
+    grid-area: indicator;
     grid-column: 1 / -1;
+    position: relative;
     z-index: 12;
 
     &-item {

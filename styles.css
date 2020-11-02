@@ -762,7 +762,7 @@ a:hover {
     -ms-grid-rows: min-content min-content min-content min-content;
         grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
         grid-template-rows: min-content min-content min-content min-content;
-        grid-template-areas: "title title" " address highlights" "skills journey" "skills education";
+        grid-template-areas: "title title" "address highlights" "skills journey" "skills education";
   }
 }
 
@@ -1204,35 +1204,37 @@ a:hover {
   height: 100vh;
   padding: 0 3px;
   display: none;
-  -ms-grid-columns: 5vw 80vw 5vw;
-      grid-template-columns: 5vw 80vw 5vw;
+  -ms-grid-columns: 25vw 50vw 25vw;
+      grid-template-columns: 25vw 50vw 25vw;
   -ms-grid-rows: 90vh 10vh;
       grid-template-rows: 90vh 10vh;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
   z-index: 10;
   position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+      grid-template-areas: "box box box" "backwards indicator forwards";
 }
 
 @media (min-width: 900px) {
   .preview {
-    -ms-grid-columns: 5vw 85vw 5vw;
-        grid-template-columns: 5vw 85vw 5vw;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -ms-grid-rows: 85vh 15vh;
+        grid-template-rows: 85vh 15vh;
   }
 }
 
 .preview__box {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: box;
   max-width: 90vw;
   max-height: 90vh;
   background: #f0f0f0;
@@ -1281,6 +1283,18 @@ a:hover {
   z-index: 12;
 }
 
+.preview__control--backwards {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: backwards;
+}
+
+.preview__control--forwards {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: forwards;
+}
+
 .preview__control i {
   color: #f0f0f0;
   font-size: 60px;
@@ -1288,7 +1302,7 @@ a:hover {
 
 @media (min-width: 900px) {
   .preview__control i {
-    font-size: 200px;
+    font-size: 100px;
   }
 }
 
@@ -1307,8 +1321,11 @@ a:hover {
 }
 
 .preview__indicator {
-  position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: indicator;
   grid-column: 1 / -1;
+  position: relative;
   z-index: 12;
 }
 

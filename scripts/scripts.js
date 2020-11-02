@@ -113,8 +113,8 @@ class HomePageRouter {
         let maxHeight = 0;
 
         if ($(window).width() < 900) {
-            maxWidth = 0.80 * $(window).width() - 10;
-            maxHeight = 0.90 * $(window).height() - 30;
+            maxWidth = 0.85 * $(window).width() - 10;
+            maxHeight = 0.85 * $(window).height() - 30;
             if (imgWidth > imgHeight) {
                 $(previewImg).height('auto');
                 $(previewImg).width(maxWidth);
@@ -131,7 +131,7 @@ class HomePageRouter {
             }
         } else {
             maxWidth = 0.85 * $(window).width() - 10;
-            maxHeight = 0.85 * $(window).height() - 30;
+            maxHeight = 0.80 * $(window).height() - 30;
 
             if (imgWidth > imgHeight) {
                 let previewRatio = maxHeight / imgHeight;

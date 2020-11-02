@@ -862,7 +862,7 @@ const $bodyContentDe = $(`
                         Bearbeitung, Löschen und Simulation des Kaufs von Kinokarten.
                     </p>
                     <div class="project__media">
-                        <div class="project__media-title">Movie platform - Gallery</div>
+                        <div class="project__media-title">Movie platform - Galerie</div>
                         <div class="project__media-img">
                             <img src="./assets/images/MoviesSPA/1.png" alt="Home view">
                         </div>
