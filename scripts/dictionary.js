@@ -14,7 +14,7 @@ const $bodyContentDe = $(`
         <div class="content-container">
             <div class="header__logo header__logo--backend">
                 <img src="./assets/icons/noun_back end_133744.svg" alt="back-end-icon">
-                <div class="header__logo-lang-bar header__logo-lang-bar--backend">EN</div>
+                <div class="header__logo-lang-bar header__logo-lang-bar--backend">DE</div>
             </div>
             <nav class="nav">
                 <ul class="nav__list row row--right-aligned">
@@ -26,7 +26,7 @@ const $bodyContentDe = $(`
             </nav>
             <div class="header__logo header__logo--frontend">
                 <img src="./assets/icons/noun_front end_133743.svg" alt="front-end-icon">
-                <div class="header__logo-lang-bar header__logo-lang-bar--frontend">EN</div>
+                <div class="header__logo-lang-bar header__logo-lang-bar--frontend">DE</div>
             </div>
         </div>
     </header>

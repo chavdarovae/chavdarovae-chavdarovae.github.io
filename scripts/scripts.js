@@ -258,10 +258,8 @@ class HomePageRouter {
             if (!$languageBar.is(':visible')) return;
 
             if ($languageBar.text() === 'EN') {
-                $languageBar.text('DE');
                 switchLanguageTo('DE');
             } else if ($languageBar.text() === 'DE') {
-                $languageBar.text('EN');
                 switchLanguageTo('EN');
             }
             this.init();
