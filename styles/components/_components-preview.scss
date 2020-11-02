@@ -3,7 +3,7 @@
   height: 100vh;
   padding: 0 3px;
   display: none;
-  grid-template-columns: 25vw 50vw 25vw;
+  grid-template-columns: 15vw 70vw 15vw;
   grid-template-rows: 75vh 10vh 15vh;
   justify-items: center;
   align-items: center;
@@ -19,6 +19,7 @@
     "backwards indicator forwards";
 
   @include for-tablet-landscape-up {
+    grid-template-columns: 35vw 30vw 35vw;
   }
 
   &__box {
@@ -116,15 +117,18 @@
       border-radius: 50%;
       height: 15px;
       width: 15px;
-      margin: 10px;
+      margin: 5px;
       background-color: #f0f0f0;
       box-shadow: $secondary-shadow;
       cursor: pointer;
 
+      @include for-tablet-landscape-up {
+        margin: 10px;
+      }
+
       &--current {
         background-color: $primary-color;
         box-shadow: $primary-shadow;
-        margin: 5px;
       }
     }
   }

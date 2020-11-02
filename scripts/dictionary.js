@@ -218,7 +218,7 @@ const $bodyContentDe = $(`
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>GitHub Repo mit eigenen Lösungen von Hausaufgaben und Prüfungsaufgaben </span>
-                            <a href="#">hier</a>
+                            <a href="https://github.com/chavdarovae/08.Angular-Jan-2020">hier</a>
                         </div>
                     </div>
                     <div class="course__footer row row--space-btw">
@@ -1171,7 +1171,7 @@ const $bodyContentEn = $(`
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>GitHub repo with own solutions of homework and exam tasks </span>
-                            <a href="#">here</a>
+                            <a href="https://github.com/chavdarovae/08.Angular-Jan-2020">here</a>
                         </div>
                     </div>
                     <div class="course__footer row row--space-btw">
