@@ -1007,7 +1007,7 @@ const $bodyContentEn = $(`
     <main class="main">
         <section class="main__about" id="about">
             <div class="content-container">
-                <h2 class="main__about-title">About me DE</h2>
+                <h2 class="main__about-title">About me</h2>
 
                 <div class="main__about-highlights highlighted">
                     With 8 years of practice in engineering design, project management and site management I am
