@@ -6,10 +6,11 @@
     [class*="-title"],
     [class*="__info"] {
         justify-self: center;
-        margin: 10px 0;
+        margin: 10px auto;
 
         @include for-tablet-landscape-up {
             grid-column: 1 / -1;
+            margin: 10px 0;
         }
     }
 

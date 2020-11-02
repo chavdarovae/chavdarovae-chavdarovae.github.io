@@ -23,7 +23,12 @@ const selectors = {
 
 }
 
+
 class HomePageRouter {
+    //toggle swipe event listener
+    swipeLeftEventListenerStatus = 'enabled';
+    swipeRightEventListenerStatus = 'enabled';
+
     init() {
         this.registerEventHandlers();
     }
@@ -35,8 +40,8 @@ class HomePageRouter {
         this.handlePreviewControlClick();
         this.handlePreviewCloseClick();
         this.handleCertificateTriggerClick();
-        this.handlePreviewImgSipeleft();
-        this.handlePreviewImgSiperight();
+        this.handlePreviewImgSwipeLeft();
+        this.hanhandlePreviewImgSwipeRight();
         this.handleLanguageToggleClick();
 
     }
@@ -104,7 +109,6 @@ class HomePageRouter {
             }
         });
 
-
         let maxWidth = 0;
         let maxHeight = 0;
 
@@ -146,14 +150,18 @@ class HomePageRouter {
         }
 
         if ($img.parent().next('div[class$="-img"]').find('img').length === 0) {
-            $(previewForwards).addClass('invisible')
+            this.swipeLeftEventListenerStatus = 'disabled';
+            $(previewForwards).addClass('invisible');
         } else {
+            this.swipeLeftEventListenerStatus = 'enabled';
             $(previewForwards).removeClass('invisible');
         }
         if ($img.parent().prev('div[class$="-img"]').find('img').length === 0) {
-            $(previewBackwards).addClass('invisible')
+            $(previewBackwards).addClass('invisible');
+            this.swipeRightEventListenerStatus = 'disabled';
         } else {
             $(previewBackwards).removeClass('invisible');
+            this.swipeRightEventListenerStatus = 'enabled';
         }
     }
 
@@ -200,19 +208,27 @@ class HomePageRouter {
         })
     }
 
-    handlePreviewImgSipeleft() {
+    handlePreviewImgSwipeLeft() {
         const { previewImg } = selectors;
-
         $(previewImg).on('swipeleft', (e) => {
-            this.changePreviewImage('next');
+            if (this.swipeLeftEventListenerStatus === 'disabled') {
+                return;
+            } else {
+                this.changePreviewImage('next');
+            }
         })
+
     }
 
-    handlePreviewImgSiperight() {
+    hanhandlePreviewImgSwipeRight() {
         const { previewImg } = selectors;
 
         $(previewImg).on('swiperight', (e) => {
-            this.changePreviewImage('previous');
+            if (this.swipeRightEventListenerStatus === 'disabled') {
+                return;
+            } else {
+                this.changePreviewImage('previous');
+            }
         })
     }
 
