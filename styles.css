@@ -1206,8 +1206,8 @@ a:hover {
   display: none;
   -ms-grid-columns: 15vw 70vw 15vw;
       grid-template-columns: 15vw 70vw 15vw;
-  -ms-grid-rows: 75vh 10vh 15vh;
-      grid-template-rows: 75vh 10vh 15vh;
+  -ms-grid-rows: 80vh 10vh 10vh;
+      grid-template-rows: 80vh 10vh 10vh;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;

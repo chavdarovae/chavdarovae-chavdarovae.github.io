@@ -1,6 +1,6 @@
 const selectors = {
     main: '.main',
-    navBtn: '.nav__list-link',
+    navBtn: '.nav__list-link,.work__description-link',
     curNavBtn: '.nav__list-link--current',
     courseInstance: '.course',
     curCourseInstance: '.course--current',
@@ -114,7 +114,7 @@ class HomePageRouter {
 
         if ($(window).width() < 900) {
             maxWidth = 0.90 * $(window).width() - 10;
-            maxHeight = 0.70 * $(window).height() - 30;
+            maxHeight = 0.75 * $(window).height() - 30;
             if (imgWidth > imgHeight) {
                 $(previewImg).height('auto');
                 $(previewImg).width(maxWidth);
@@ -130,8 +130,8 @@ class HomePageRouter {
                 }
             }
         } else {
-            maxWidth = 0.85 * $(window).width() - 10;
-            maxHeight = 0.70 * $(window).height() - 30;
+            maxWidth = 0.90 * $(window).width() - 10;
+            maxHeight = 0.75 * $(window).height() - 30;
 
             if (imgWidth > imgHeight) {
                 let previewRatio = maxHeight / imgHeight;
