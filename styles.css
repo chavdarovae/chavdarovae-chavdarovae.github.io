@@ -733,8 +733,6 @@ a:hover {
       justify-self: center;
   background-color: #f9f0a3;
   padding: 20px 10px;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
@@ -959,8 +957,6 @@ a:hover {
   width: 300px;
   min-width: 300px;
   padding: 20px 0;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-image: radial-gradient(circle, #ffffff, #e4f2ff, #acecff, #60e7f8, #00dfca);
   overflow: hidden;
@@ -1041,8 +1037,6 @@ a:hover {
   background-color: #FF3E66;
   border: none;
   border-radius: 100px;
-  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   padding: 5px 22px;
   margin-bottom: 20px !important;
   color: #fff;
