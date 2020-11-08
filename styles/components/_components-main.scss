@@ -1,5 +1,6 @@
 .main {
-    padding: 10px;
+    position: relative;
+    padding: 50px 10px 10px 10px;
     color: $text-color;
 
     [class*="__title"],
@@ -35,10 +36,9 @@
 
     &__about {
         .content-container {
-            grid-template-rows: min-content min-content min-content min-content min-content min-content;
+            // grid-template-rows: min-content min-content min-content min-content min-content min-content;
 
             grid-template-areas:
-                "title"
                 "highlights"
                 "journey"
                 "skills"
@@ -47,10 +47,9 @@
 
             @include for-tablet-landscape-up {
                 grid-template-columns: 400px 1fr;
-                grid-template-rows: min-content min-content min-content min-content;
+                // grid-template-rows: min-content min-content min-content min-content;
 
                 grid-template-areas:
-                    "title title"
                     "address highlights"
                     "skills journey"
                     "skills education";
@@ -166,6 +165,7 @@
                 grid-template-columns: 400px 400px;
                 justify-items: center;
                 align-items: start;
+                justify-content: space-between;
             }
 
             @include for-desktop-up {

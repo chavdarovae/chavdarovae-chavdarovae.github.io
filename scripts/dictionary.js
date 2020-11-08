@@ -34,7 +34,7 @@ const $bodyContentDe = $(`
 <main class="main">
 <section class="main__about" id="about">
     <div class="content-container">
-        <h2 class="main__about-title">About</h2>
+        <h2 class="main__about-title page-title">About</h2>
 
         <div class="main__about-highlights highlighted">
             Mit 8 Jahren Berufserfahrung im Bereich der Planung, Projektmanagement und Bauleitung bin ich in der
@@ -163,7 +163,7 @@ const $bodyContentDe = $(`
 
 <section class="main__courses hidden" id="kurse">
     <div class="content-container">
-        <h2 class="main__title">Kurse</h2>
+        <h2 class="main__title page-title">Kurse</h2>
 
         <div class="main__info">
             <p>
@@ -555,7 +555,7 @@ const $bodyContentDe = $(`
 
 <section class="main__experience hidden" id="erfahrung">
     <div class="content-container">
-        <h2 class="main__title">Berufliche Erfahrung</h2>
+        <h2 class="main__title page-title">Berufliche Erfahrung</h2>
 
         <article class="work">
             <div class="work__media">
@@ -703,7 +703,7 @@ const $bodyContentDe = $(`
 
 <section class="main__projects hidden" id="projekte">
     <div class="content-container">
-        <h2 class="main__title">Persönliche Projekte</h2>
+        <h2 class="main__title page-title">Persönliche Projekte</h2>
         <div class="project">
             <h3 class="project__title">Performance Management Tool - PMT SPA</h3>
             <div class="project__icon">
@@ -950,7 +950,7 @@ const $bodyContentEn = $(`
     <main class="main">
         <section class="main__about" id="about">
             <div class="content-container">
-                <h2 class="main__about-title">About me</h2>
+                <h2 class="main__about-title page-title">About me</h2>
 
                 <div class="main__about-highlights highlighted">
                     With 8 years of practice in engineering design, project management and site management I am
@@ -1089,7 +1089,7 @@ const $bodyContentEn = $(`
 
         <section class="main__courses hidden" id="courses">
             <div class="content-container">
-                <h2 class="main__title">Courses</h2>
+                <h2 class="main__title page-title">Courses</h2>
 
                 <div class="main__info">
                     <p>
@@ -1506,7 +1506,7 @@ const $bodyContentEn = $(`
 
         <section class="main__experience hidden" id="experience">
             <div class="content-container">
-                <h2 class="main__title">Work experience</h2>
+                <h2 class="main__title page-title">Work experience</h2>
 
                 <article class="work">
                     <div class="work__media">
@@ -1690,7 +1690,7 @@ const $bodyContentEn = $(`
 
         <section class="main__projects hidden" id="projects">
             <div class="content-container">
-                <h2 class="main__title">Personal projects</h2>
+                <h2 class="main__title page-title">Personal projects</h2>
                 <div class="project">
                     <h3 class="project__title">Performance Management Tool - PMT SPA</h3>
                     <div class="project__icon">
