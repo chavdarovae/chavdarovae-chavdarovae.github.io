@@ -33,160 +33,128 @@
         width: 100%;
         margin-bottom: 10px;
     }
+}
 
-    &__about {
-        .content-container {
-            // grid-template-rows: min-content min-content min-content min-content min-content min-content;
+//main-sections
+.main__about {
+    .content-container {
+        grid-template-areas:
+            "highlights"
+            "journey"
+            "skills"
+            "education"
+            "address";
+
+        @include for-tablet-landscape-up {
+            grid-template-columns: 400px 1fr;
+            // grid-template-rows: min-content min-content min-content min-content;
 
             grid-template-areas:
-                "highlights"
-                "journey"
-                "skills"
-                "education"
-                "address";
-
-            @include for-tablet-landscape-up {
-                grid-template-columns: 400px 1fr;
-                // grid-template-rows: min-content min-content min-content min-content;
-
-                grid-template-areas:
-                    "address highlights"
-                    "skills journey"
-                    "skills education";
-            }
+                "address highlights"
+                "skills journey"
+                "skills education";
         }
+    }
 
-        &-title {
-            grid-area: title;
-        }
+    &-title {
+        grid-area: title;
+    }
 
-        &-highlights {
-            grid-area: highlights;
-        }
+    &-highlights {
+        grid-area: highlights;
+    }
 
-        &-journey {
-            grid-area: journey;
+    &-journey {
+        grid-area: journey;
 
-            @include for-tablet-landscape-up {
-                justify-content: space-between;
-            }
-        }
-
-        &-education {
-            grid-area: education;
-
-            @include for-tablet-landscape-up {
-                justify-content: space-between;
-            }
-
-            h4 {
-                width: fit-content;
-                cursor: pointer;
-                position: relative;
-
-                &:after {
-                    content: attr(data-collaps);
-                    display: inline;
-                    font-size: 10px;
-                    position: absolute;
-                    top: 0;
-                    right: -13px;
-                }
-            }
-
-            .text-like-list {
-                li {
-                    opacity: 0;
-                }
-            }
-
-            //certificate-list toggle logic
-            // .certificate-trigger {
-            //     width: fit-content;
-            //     cursor: pointer;
-            //     position: relative;
-
-            //     &:after {
-            //         content: "▼";
-            //         display: inline;
-            //         font-size: 10px;
-            //         position: absolute;
-            //         top: 0;
-            //         right: -10px;
-            //     }
-            // }
-
-            // #certificateToggle {
-            //     display: none;
-            //     pointer-events: none;
-            //     position: absolute;
-            // }
-
-            // #certificateToggle + .text-like-list {
-            //     display: none;
-            // }
-
-            // #certificateToggle:checked + .text-like-list {
-            //     display: block;
-            // }
-        }
-
-        &-address {
-            grid-area: address;
-            min-height: 135px;
+        @include for-tablet-landscape-up {
             justify-content: space-between;
-            width: 100%;
-            background-color: #f9f0a3;
-            padding: 20px 10px;
-            box-shadow: $secondary-shadow;
-            border-radius: $primary-rad;
+        }
+    }
 
-            @include for-tablet-landscape-up {
-                min-height: 95px;
-                padding: 0;
-                background-color: #fff;
-                box-shadow: none;
-                border-radius: none;
+    &-education {
+        grid-area: education;
+
+        @include for-tablet-landscape-up {
+            justify-content: space-between;
+        }
+
+        h4 {
+            width: fit-content;
+            cursor: pointer;
+            position: relative;
+
+            &:after {
+                content: attr(data-collaps);
+                display: inline;
+                font-size: 10px;
+                position: absolute;
+                top: 0;
+                right: -13px;
             }
         }
 
-        &-skills {
-            grid-area: skills;
-
-            @include for-tablet-landscape-up {
-                justify-self: start;
+        .text-like-list {
+            li {
+                opacity: 0;
             }
         }
     }
 
-    &__courses {
-        .content-container {
-            @include for-tablet-landscape-up {
-                grid-template-columns: 400px 400px;
-                justify-items: center;
-                align-items: start;
-                justify-content: space-between;
-            }
+    &-address {
+        grid-area: address;
+        min-height: 135px;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #f9f0a3;
+        padding: 20px 10px;
+        border-radius: $primary-rad;
 
-            @include for-desktop-up {
-                grid-template-columns: 400px 400px 400px;
-                justify-items: center;
-            }
+        @include for-tablet-landscape-up {
+            min-height: 95px;
+            padding: 0;
+            background-color: #fff;
+            box-shadow: none;
+            border-radius: none;
         }
     }
 
-    &__experience {
-        .content-container {
+    &-skills {
+        grid-area: skills;
+
+        @include for-tablet-landscape-up {
+            justify-self: start;
         }
     }
+}
 
-    &__projects {
-        .content-container {
+.main__courses {
+    .content-container {
+        @include for-tablet-landscape-up {
+            grid-template-columns: 400px 400px;
+            justify-items: center;
+            align-items: start;
+            justify-content: space-between;
         }
 
-        p {
-            width: 100%;
-            margin-bottom: 10px;
+        @include for-desktop-up {
+            grid-template-columns: 400px 400px 400px;
+            justify-items: center;
         }
+    }
+}
+
+.main__experience {
+    .content-container {
+    }
+}
+
+.main__projects {
+    .content-container {
+    }
+
+    p {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
