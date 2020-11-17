@@ -641,10 +641,18 @@ a:hover {
 
 .header__logo-lang-bar {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #fff;
   font-size: 13px;
   line-height: 1;
-  padding: 2px 2px;
   border: 1px solid #FF3E66;
   width: 22px;
   height: 18px;
