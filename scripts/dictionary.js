@@ -67,9 +67,9 @@ const $bodyContentDe = $(`
                     </p>
 
                     <p class="main__about-journey-item">
-                        Im Laufe der Zeit und mit zunehmender Neugier wuchs auch mein Interesse, eigene Anwendungen zu
-                        entwickeln und Bereiche meines Fachgebiets und Alltagslebens abzudecken, die meiner Meinung nach
-                        mit digitalen Lösungen verbessert werden könnten.
+                        Mit zunehmender Neugier wuchs auch mein Interesse, eigene Anwendungen zu entwickeln und Bereiche
+                        meines Fachgebiets und Alltagslebens abzudecken, die meiner Meinung nach mit digitalen Lösungen
+                        verbessert werden könnten.
                     </p>
 
                     <p class="main__about-journey-item">
@@ -105,7 +105,7 @@ const $bodyContentDe = $(`
                             <li class="skill-set__list-item">Analytischer Problemlöser</li>
                             <li class="skill-set__list-item">Technische Designlösungen und Implementierung</li>
                             <li class="skill-set__list-item">Führungserfahrung</li>
-                            <li class="skill-set__list-item">Projektleitungerfahrung</li>
+                            <li class="skill-set__list-item">Projektleitungserfahrung</li>
                         </ul>
                     </div>
 
@@ -194,7 +194,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> Praktische Kenntnisse für die Erstellung von Einzelseitenanwendungen und TypeScript Basis
+                            <span class="h4-like-title">Fokus des Kurses:</span> Praktische Kenntnisse für die
+                            Erstellung von Einzelseitenanwendungen und TypeScript Basis
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -238,7 +239,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> modernes Multi-Plattform-Anwendungsdesign und Entwicklung mit Animationen und Ikonen.
+                            <span class="h4-like-title">Fokus des Kurses:</span> modernes
+                            Multi-Plattform-Anwendungsdesign und Entwicklung mit Animationen und Ikonen.
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -281,7 +283,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> praktische Kenntnisse in der Web-Entwicklung mit den neuesten Innovationen des HTML5- und CSS3-Standards.
+                            <span class="h4-like-title">Fokus des Kurses:</span> praktische Kenntnisse in der
+                            Web-Entwicklung mit den neuesten Innovationen des HTML5- und CSS3-Standards.
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -328,7 +331,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> praktische Kenntnisse zur Erstellung gut strukturierter Einzelseitenanwendungen.
+                            <span class="h4-like-title">Fokus des Kurses:</span> praktische Kenntnisse zur Erstellung
+                            gut strukturierter Einzelseitenanwendungen.
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -372,7 +376,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> algorithmisches Denken und praktische Kenntnisse für DOM-Baummanipulation und Unit-Tests.
+                            <span class="h4-like-title">Fokus des Kurses:</span> algorithmisches Denken und praktische
+                            Kenntnisse für DOM-Baummanipulation und Unit-Tests.
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -415,7 +420,9 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurse:</span> JS-Syntax und praktische Kenntnisse in der Manipulation mit Datentypen, Operatoren, Expressions, Konditionskonstruktionen, Loops und Funktionen.
+                            <span class="h4-like-title">Fokus des Kurse:</span> JS-Syntax und praktische Kenntnisse in
+                            der Manipulation mit Datentypen, Operatoren, Expressions, Konditionskonstruktionen, Loops
+                            und Funktionen.
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -459,7 +466,8 @@ const $bodyContentDe = $(`
                     </div>
                     <div class="course__info">
                         <div class="course__info-focus">
-                            <span class="h4-like-title">Fokus des Kurses:</span> Basis Techniken und Instrumente für die praktische Programmierung
+                            <span class="h4-like-title">Fokus des Kurses:</span> Basis Techniken und Instrumente für die
+                            praktische Programmierung
                         </div>
                         <div class="course__info-link hidden animations-delayed-appaerance">
                             <span>Kursinstanz-Link </span>
@@ -571,7 +579,8 @@ const $bodyContentDe = $(`
                         Single-Page-Webanwendung, die von Six-Sigma-Techniken zur Leistungsverbesserung inspiriert ist.
                         Single Page Applications mit Ausbildungszweck - Plattformen zum Austausch und zur Bewertung
                         inspirierender Film- und Songtitel.
-                        Für weitere Informationen siehen Sie bitte Kapitel <a href="#" class="work__description-link">Projekte</a>.
+                        Für weitere Informationen siehen Sie bitte Kapitel <a href="#"
+                            class="work__description-link">Projekte</a>.
                     </div>
                 </article>
 
