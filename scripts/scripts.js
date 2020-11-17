@@ -43,7 +43,6 @@ class HomePageRouter {
         this.handlePreviewImgSwipeLeft();
         this.hanhandlePreviewImgSwipeRight();
         this.handleLanguageToggleClick();
-
     }
 
     handleNavBtnClick() {
@@ -51,7 +50,7 @@ class HomePageRouter {
         $(navBtn).on('click', (e) => {
             $(curNavBtn).removeClass('nav__list-link--current');
             $(e.target).addClass('nav__list-link--current');
-            const mainComponentId = '#' + e.target.text.toLowerCase();
+            const mainComponentId = `#${$(e.target).attr('id')}Section`;
             if (mainComponentId === '#courses') {
                 $(curCourseInstance).removeClass('course--current');
             }
@@ -257,12 +256,15 @@ class HomePageRouter {
             const $languageBar = $(e.target).parents('.header__logo').find('.header__logo-lang-bar');
             if (!$languageBar.is(':visible')) return;
 
+            const currSection = $('.nav__list-link--current').attr('id');
+
             if ($languageBar.text() === 'EN') {
-                switchLanguageTo('DE');
+                switchLanguageTo('DE', currSection);
             } else if ($languageBar.text() === 'DE') {
-                switchLanguageTo('EN');
+                switchLanguageTo('EN', currSection);
             }
             this.init();
+            $(`#${currSection}`).click();
         })
     }
 }
