@@ -713,6 +713,7 @@ a:hover {
   -ms-grid-column-align: center;
       justify-self: center;
   margin: 10px auto;
+  text-align: center;
 }
 
 @media (min-width: 900px) {
@@ -1175,15 +1176,23 @@ a:hover {
 }
 
 .project__media-img {
-  max-width: 300px;
+  max-width: 100%;
   border-radius: 4px;
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
-.project__media-img--big {
-  max-width: 100%;
+@media (min-width: 900px) {
+  .project__media-img {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .project__media-img--big {
+    max-width: 100%;
+  }
 }
 
 .project__media-img:not(:nth-child(2)) {
