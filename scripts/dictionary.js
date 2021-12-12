@@ -784,7 +784,7 @@ const $bodyContentDe = $(`
                         Zusammenarbeit mit Backend-Entwicklern, Datenanalysten und Produktentwicklern.
                     </p>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Carrypicker - Gallery</div>
+                        <div class="project__media-title">Carrypicker - Info</div>
                         <div class="project__media-img--big">
                             <img src="./assets/images/Carrypicker-ui/0.png" alt="Shipment orders list view">
                         </div>
@@ -823,7 +823,7 @@ const $bodyContentDe = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta TMS - Gallery</div>
+                        <div class="project__media-title">Colleta TMS - Info</div>
                         <div class="project__media-img--big">
                             <img src="./assets/images/Colleta-tms/0.png" alt="Login-first step view">
                         </div>
@@ -862,7 +862,7 @@ const $bodyContentDe = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta Trucking - Gallery</div>
+                        <div class="project__media-title">Colleta Trucking - Info</div>
                         <div class="project__media-img--big">
                             <img src="./assets/images/Colleta-trucking/0.png" alt="Login-first step view">
                         </div>
@@ -889,7 +889,7 @@ const $bodyContentDe = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta Manager - Gallery</div>
+                        <div class="project__media-title">Colleta Manager - Info</div>
                         <div class="project__media-img--big">
                             <img src="./assets/images/Colleta-manager/0.png" alt="Login-first step view">
                         </div>
@@ -1992,7 +1992,7 @@ const $bodyContentEn = $(`
                         Partnered with backend developers, data analysts and product developers.
                     </p>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Carrypicker - Gallery</div>
+                        <div class="project__media-title">Carrypicker - Info</div>
                         <div class="project__media-img project__media-img--big">
                             <img src="./assets/images/Carrypicker-ui/0.png" alt="Shipment orders list view">
                         </div>
@@ -2027,7 +2027,7 @@ const $bodyContentEn = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta TMS - Gallery</div>
+                        <div class="project__media-title">Colleta TMS - Info</div>
                         <div class="project__media-img project__media-img--big">
                             <img src="./assets/images/Colleta-tms/0.png" alt="Login-first step view">
                         </div>
@@ -2062,7 +2062,7 @@ const $bodyContentEn = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta Trucking - Gallery</div>
+                        <div class="project__media-title">Colleta Trucking - Info</div>
                         <div class="project__media-img project__media-img--big">
                             <img src="./assets/images/Colleta-trucking/0.png" alt="Login-first step view">
                         </div>
@@ -2087,7 +2087,7 @@ const $bodyContentEn = $(`
                         </div> -->
                     </div>
                     <div class="project__media project__media--info">
-                        <div class="project__media-title">Colleta Manager - Gallery</div>
+                        <div class="project__media-title">Colleta Manager - Info</div>
                         <div class="project__media-img project__media-img--big">
                             <img src="./assets/images/Colleta-manager/0.png" alt="Login-first step view">
                         </div>
