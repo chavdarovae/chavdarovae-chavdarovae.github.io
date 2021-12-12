@@ -54,8 +54,6 @@ class HomePageRouter {
             $(curNavBtn).removeClass('nav__list-link--current');
             $(e.target).addClass('nav__list-link--current');
             const mainComponentId = `#${$(e.target).attr('id')}Section`;
-            console.log(mainComponentId);
-            console.log($(e.target));
             if (mainComponentId === '#coursesSection') {
                 $(curCourseInstance).removeClass('course--current');
             }
