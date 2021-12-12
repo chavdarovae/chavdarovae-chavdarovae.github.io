@@ -18,6 +18,7 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 20px;
+        column-gap: 20px;
         justify-items: center;
         align-items: start;
         justify-content: space-between;
@@ -25,6 +26,12 @@
 
         @include for-tablet-landscape-up {
             grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &--info {
+            @include for-tablet-landscape-up {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         &:hover {
@@ -36,6 +43,10 @@
         border-radius: $primary-rad;
         box-shadow: $secondary-shadow;
         overflow: hidden;
+
+        &--big {
+            max-width: 100%;
+        }
     }
 
     &__media-img:not(:nth-child(2)) {

@@ -2,6 +2,8 @@ const selectors = {
     main: '.main',
     navBtn: '.nav__list-link,.work__description-link',
     curNavBtn: '.nav__list-link--current',
+    anchorNavBtn: '.anchor-nav__list-item',
+    currAnchorNavBtn: '.anchor-nav__list-link--current',
     courseInstance: '.course',
     curCourseInstance: '.course--current',
     img: 'div[class*="__media-img"] img',
@@ -20,7 +22,7 @@ const selectors = {
     certificateTrigger: '#certificateTrigger',
     certificateList: '#certificateList',
     languageToggle: '.header__logo-lang-bar, .header__logo img',
-
+    projectsSection: '#projectsSection',
 }
 
 
@@ -35,6 +37,7 @@ class HomePageRouter {
 
     registerEventHandlers() {
         this.handleNavBtnClick();
+        this.handleSectionBtnClick();
         this.handleCourseInstanceClick();
         this.handleImgClick();
         this.handlePreviewControlClick();
@@ -51,11 +54,23 @@ class HomePageRouter {
             $(curNavBtn).removeClass('nav__list-link--current');
             $(e.target).addClass('nav__list-link--current');
             const mainComponentId = `#${$(e.target).attr('id')}Section`;
-            if (mainComponentId === '#courses') {
+            console.log(mainComponentId);
+            console.log($(e.target));
+            if (mainComponentId === '#coursesSection') {
                 $(curCourseInstance).removeClass('course--current');
             }
             $(main).children().filter(':visible').addClass('hidden');
             $(mainComponentId).removeClass('hidden');
+        })
+    }
+
+    handleSectionBtnClick() {
+        const { anchorNavBtn, currAnchorNavBtn } = selectors;
+        $(anchorNavBtn).on('click', (e) => {
+            $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
+            $(e.target).addClass('anchor-nav__list-link--current');
+            const projectsDivId = `#${$(e.target).attr('id')}Div`;
+            location.hash = projectsDivId;
         })
     }
 
