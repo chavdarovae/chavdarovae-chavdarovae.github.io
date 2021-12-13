@@ -60,7 +60,6 @@ class HomePageRouter {
             if (mainComponentId === '#projectsSection') {
                 $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
                 $('#workProjects').addClass('anchor-nav__list-link--current');
-                window.scroll(0,1);
             }
             $(main).children().filter(':visible').addClass('hidden');
             $(mainComponentId).removeClass('hidden');
@@ -73,9 +72,7 @@ class HomePageRouter {
             $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
             $(e.target).addClass('anchor-nav__list-link--current');
             const projectsDivId = `#${$(e.target).attr('id')}Div`;
-            location.hash = '#';
             location.hash = projectsDivId;
-            location.href = '#';
             location.href = projectsDivId;
         })
     }
