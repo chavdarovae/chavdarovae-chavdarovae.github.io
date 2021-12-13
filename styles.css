@@ -713,7 +713,6 @@ a:hover {
   -ms-grid-column-align: center;
       justify-self: center;
   margin: 10px auto;
-  text-align: center;
 }
 
 @media (min-width: 900px) {
@@ -723,6 +722,10 @@ a:hover {
     grid-column: 1 / -1;
     margin: 10px 0;
   }
+}
+
+.main [class*="__title"] {
+  text-align: center;
 }
 
 .main [class*="-highlights"],

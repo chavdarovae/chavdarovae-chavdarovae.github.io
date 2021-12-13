@@ -8,12 +8,16 @@
     [class*="__info"] {
         justify-self: center;
         margin: 10px auto;
-        text-align: center;
+        // text-align: center;
 
         @include for-tablet-landscape-up {
             grid-column: 1 / -1;
             margin: 10px 0;
         }
+    }
+
+    [class*="__title"] {
+        text-align: center;
     }
 
     [class*="-highlights"],
