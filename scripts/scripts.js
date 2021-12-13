@@ -49,13 +49,18 @@ class HomePageRouter {
     }
 
     handleNavBtnClick() {
-        const { navBtn, main, curCourseInstance, curNavBtn } = selectors;
+        const { navBtn, main, curCourseInstance, curNavBtn, currAnchorNavBtn } = selectors;
         $(navBtn).on('click', (e) => {
             $(curNavBtn).removeClass('nav__list-link--current');
             $(e.target).addClass('nav__list-link--current');
             const mainComponentId = `#${$(e.target).attr('id')}Section`;
             if (mainComponentId === '#coursesSection') {
                 $(curCourseInstance).removeClass('course--current');
+            }
+            if (mainComponentId === '#projectsSection') {
+                $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
+                $('#workProjects').addClass('anchor-nav__list-link--current');
+                window.scroll(0,1);
             }
             $(main).children().filter(':visible').addClass('hidden');
             $(mainComponentId).removeClass('hidden');
@@ -65,7 +70,6 @@ class HomePageRouter {
     handleSectionBtnClick() {
         const { anchorNavBtn, currAnchorNavBtn } = selectors;
         $(anchorNavBtn).on('click', (e) => {
-            
             $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
             $(e.target).addClass('anchor-nav__list-link--current');
             const projectsDivId = `#${$(e.target).attr('id')}Div`;
