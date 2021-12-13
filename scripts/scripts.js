@@ -65,10 +65,14 @@ class HomePageRouter {
     handleSectionBtnClick() {
         const { anchorNavBtn, currAnchorNavBtn } = selectors;
         $(anchorNavBtn).on('click', (e) => {
+            
             $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
             $(e.target).addClass('anchor-nav__list-link--current');
             const projectsDivId = `#${$(e.target).attr('id')}Div`;
+            location.hash = '#';
             location.hash = projectsDivId;
+            location.href = '#';
+            location.href = projectsDivId;
         })
     }
 
@@ -121,16 +125,13 @@ class HomePageRouter {
             }
         });
 
-        let maxWidth = 0;
-        let maxHeight = 0;
+        let maxWidth = 0.90 * $(window).width() - 10;
+        let maxHeight = 0.75 * $(window).height() - 30;
+        $(previewImg).width(maxWidth);
+        $(previewImg).height('auto');
 
-        if ($(window).width() < 900) {
-            maxWidth = 0.90 * $(window).width() - 10;
-            maxHeight = 0.75 * $(window).height() - 30;
-            if (imgWidth > imgHeight) {
-                $(previewImg).height('auto');
-                $(previewImg).width(maxWidth);
-            } else {
+        if ($(window).width() < 600) {
+            if (imgWidth <= imgHeight) {
                 let previewRatio = maxWidth / imgWidth;
                 if (previewRatio * imgHeight <= maxHeight) {
                     $(previewImg).height(previewRatio * imgHeight);
@@ -142,9 +143,6 @@ class HomePageRouter {
                 }
             }
         } else {
-            maxWidth = 0.90 * $(window).width() - 10;
-            maxHeight = 0.75 * $(window).height() - 30;
-
             if (imgWidth > imgHeight) {
                 let previewRatio = maxHeight / imgHeight;
                 if (previewRatio * imgWidth <= maxWidth) {

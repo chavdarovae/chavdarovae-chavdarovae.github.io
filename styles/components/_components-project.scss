@@ -44,11 +44,19 @@
         box-shadow: $secondary-shadow;
         overflow: hidden;
 
+        @include for-tablet-portrait-up {
+            max-width: 70%;
+        }
+
         @include for-tablet-landscape-up {
             max-width: 300px;
         }
 
         &--big {
+            @include for-tablet-portrait-up {
+                max-width: 70%;
+            }
+
             @include for-tablet-landscape-up {
                 max-width: 100%;
             }
