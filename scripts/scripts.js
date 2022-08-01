@@ -27,7 +27,12 @@ const selectors = {
 
 
 class HomePageRouter {
-    //toggle swipe event listener
+    // offset from top of projectsSection divs
+    workProjectsDivTop = 0;
+    personalProjectsDivTop = 0;
+    studyProjectsDivTop = 0;
+
+    // toggle swipe event listener
     swipeLeftEventListenerStatus = 'enabled';
     swipeRightEventListenerStatus = 'enabled';
 
@@ -46,6 +51,7 @@ class HomePageRouter {
         this.handlePreviewImgSwipeLeft();
         this.hanhandlePreviewImgSwipeRight();
         this.handleLanguageToggleClick();
+        this.handleScrollInProjectTab();
     }
 
     handleNavBtnClick() {
@@ -58,13 +64,42 @@ class HomePageRouter {
                 $(curCourseInstance).removeClass('course--current');
             }
             if (mainComponentId === '#projectsSection') {
-                $(currAnchorNavBtn).removeClass('anchor-nav__list-link--current');
-                $('#workProjects').addClass('anchor-nav__list-link--current');
+                this.makeAnchorNavCurrent('#workProjects');
+                setTimeout( function(){ 
+                    this.workProjectsDivTop = $('#workProjectsDiv').offset().top;
+                    this.personalProjectsDivTop = $('#personalProjectsDiv').offset().top;
+                    this.studyProjectsDivTop = $('#studyProjectsDiv').offset().top;
+                }  , 100 );
+
             }
             $(main).children().filter(':visible').addClass('hidden');
             $(mainComponentId).removeClass('hidden');
         })
     }
+
+    handleScrollInProjectTab() {
+        $(document).on('scroll', function (event) {
+            if($(projectsSection).is(":visible")) {
+                const doc = document.documentElement;
+                const currPos = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+                console.log(currPos);
+                if (currPos <= this.workProjectsDivTop) {
+                    console.log(this.workProjectsDivTop);
+                    this.makeAnchorNavCurrent('#workProjects');
+                } else if ( currPos <= this.personalProjectsDivTop ) {
+                    this.makeAnchorNavCurrent('#personalProjectsDiv');
+                } else if ( currPos <= this.studyProjectsDivTop ) {
+                    this.makeAnchorNavCurrent('#studyProjectsDiv');
+                }
+            }
+        });
+    }
+
+    makeAnchorNavCurrent(selector) {
+        $('.anchor-nav__list-link--current').removeClass('anchor-nav__list-link--current');
+        $(selector).addClass('anchor-nav__list-link--current');
+    }
+
 
     handleSectionBtnClick() {
         const { anchorNavBtn, currAnchorNavBtn } = selectors;
