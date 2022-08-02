@@ -1395,7 +1395,7 @@ const $bodyContentEn = $(`<!DOCTYPE html>
                     </p>
 
                     <p class="main__about-journey-item">
-                        I am eager to continue this exciting journey and grow my skillset professionally, learning and creating
+                        I am eager to continue this exciting journey and grow my skillset professionally, learn and create more
                         applications that improve our quality of life.
                     </p>
                 </div>
